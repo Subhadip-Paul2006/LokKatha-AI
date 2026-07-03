@@ -1,90 +1,89 @@
-# Usage and Deployment
+# Usage & Deployment Guide — LokKatha AI
 
-## Overview
-This document describes how to use and deploy the LokKatha AI platform.
+## 1. Local Setup
 
-## Block Diagram
-```mermaid
-graph TD
-    A[Field Recorder] --> B[Whisper ASR]
-    B --> C[Gemma 4 Summary/Translation]
-    C --> D[PostgreSQL]
-    C --> E[ChromaDB]
-    D --> F[API Server]
-    E --> G[RAG Q&A]
-    F --> G
+### Prerequisites
+- Python 3.10+
+- FFmpeg (for audio processing)
+- CUDA-enabled GPU (Optional, for faster ASR/LLM)
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/your-repo/lokkatha-ai.git
+cd lokkatha-ai
+
+# Setup environment
+python -m venv .venv
+source .venv/bin/activate # Linux/Mac
+.venv\Scripts\activate    # Windows
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-## Architecture Diagram
-```mermaid
-graph LR
-    subgraph Frontend
-        UI[Web / Mobile UI]
-    end
-    subgraph Backend
-        API[FastAPI]
-        CE[Gemma 4 LLM]
-        ASR[Whisper ASR]
-    end
-    subgraph Data
-        SQL[(PostgreSQL)]
-        VDB[(ChromaDB)]
-    end
-    UI -->|Query| API
-    API -->|Call| CE
-    API -->|Transcribe| ASR
-    ASR -->|Store| SQL
-    CE -->|Generate| SQL
-    CE -->|Create Embeddings| VDB
-    VDB -->|Retrieve| API
-    API -->|Serve| UI
+## 2. Configuration
+Create a `.env` file in the root directory:
+```env
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_anon_key
+GOOGLE_API_KEY=your_gemma_api_key
+WHISPER_MODEL=large-v3
+CHROMA_DB_PATH=./chroma_db
 ```
 
-## Deployment Flowchart
+## 3. Deployment Architecture
+### Cloud Deployment (Production)
 ```mermaid
-flowchart LR
-    Deploy[Deploy to Cloud] -->|Container| Docker
-    Docker -->|Orchestrate| K8s
-    K8s -->|Serve| WebUI
-    K8s -->|Process| ASRWorker
-    ASRWorker -->|Store| DB[(PostgreSQL)]
-    K8s -->|Store Embeddings| VDB[(ChromaDB)]
+block-beta
+    columns 3
+    Cloud[Google Cloud Run] --> API[FastAPI Container]
+    API --> DB[(Supabase Cloud)]
+    API --> GPU[Vertex AI / GPU Node]
 ```
 
-## Usage Sequence Diagram
+### Deployment Pipeline (Git Graph)
 ```mermaid
-sequenceDiagram
-    participant User
-    participant Frontend as WebUI
-    participant API
-    participant ASR
-    participant Gemma as Gemma4
-    participant DB
-    participant VDB
-
-    User->>Frontend: Submit Query
-    Frontend->>API: Send Query
-    API->>VDB: Retrieve embeddings
-    VDB-->>API: Return relevant chunks
-    API->>Gemma: Generate answer
-    Gemma-->>API: Return answer + citations
-    API->>Frontend: Send response
-    Frontend->>User: Show answer
+gitGraph
+    commit id: "Init"
+    branch develop
+    checkout develop
+    commit id: "ASR-impl"
+    commit id: "LLM-int"
+    checkout main
+    merge develop tag: "v0.1-alpha"
+    checkout develop
+    commit id: "RAG-fix"
+    checkout main
+    merge develop tag: "v0.2-beta"
 ```
 
-## Timeline (Gantt)
+## 4. Deployment Checklist (Kanban Style)
 ```mermaid
-gantt
-    title Deployment Timeline
-    dateFormat  YYYY-MM-DD
-    section Planning
-    Requirements        :a1, 2026-01-01, 7d
-    Architecture Design :a2, after a1, 10d
-    section Development
-    ASR Integration     :b1, after a2, 14d
-    Gemma Integration   :b2, after b1, 12d
-    Database Setup      :b3, after b2, 5d
-    section Deployment
-    Containerization    :c1, after b3, 3d
-    Cloud Deployment    :c2, after c1, 2d
+kanban
+  Todo
+    - Setup CI/CD via GitHub Actions
+    - Configure Cloud Backups
+    - Implement SSL/TLS
+  In Progress
+    - Dockerizing API
+    - Setting up Supabase Project
+  Done
+    - Environment Variable Mapping
+    - Dependency Freeze
+```
+
+## 5. Scaling Metrics (XY Chart Concept)
+*As the number of recorded interviews (X) increases, the retrieval latency (Y) should remain logarithmic due to vector indexing.*
+
+- **1k Records:** < 100ms latency
+- **100k Records:** < 300ms latency
+- **1M Records:** < 600ms latency
+
+## 6. Resource Allocation (Pie Chart)
+```mermaid
+pie title Compute Resource Distribution
+    "ASR (Whisper)" : 40
+    "LLM (Gemma 4)" : 40
+    "Database/API" : 20
 ```

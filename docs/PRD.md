@@ -1,88 +1,70 @@
-# Product Requirements Document (PRD) – LokKatha AI
+# Product Requirements Document (PRD) — LokKatha AI
 
-## 1. Vision & Goals
-Create a multilingual, AI‑powered platform that records, transcribes, translates, summarizes, and makes searchable India's oral cultural heritage.
+## 1. Product Vision
+To prevent the permanent loss of India's oral heritage by providing a tool that not only archives speech but understands and cross-references cultural context across languages.
 
-## 2. Target Personas
-- **Volunteer Fieldworker** – records interviews in rural areas.
-- **Researcher** – queries the knowledge base for specific topics.
-- **Educator** – uses content for classroom material.
-- **Community Representative** – ensures ethical use and access.
+## 2. Target Audience
+- **Field Volunteers/NGOs:** Recording elders in rural areas.
+- **Historians/Researchers:** Analyzing cultural patterns.
+- **General Public:** Discovering their roots and traditional knowledge.
 
-## 3. User Journey
+## 3. Functional Requirements
+| ID | Feature | Description | Priority |
+|----|---------|-------------|----------|
+| FR1 | Audio Processing | Convert regional Indian dialects to text using Whisper | High |
+| FR2 | AI Transformation | Summarize, translate (EN, HI, BN), and tag transcripts using Gemma 4 | High |
+| FR3 | Semantic Search | Search for "Ancient irrigation" and find relevant stories regardless of language | High |
+| FR4 | Interactive Q&A | Chat with the archive using RAG to get factual answers with citations | Medium |
+| FR5 | Consent Mgmt | Digital signing and storage of informed consent forms | Critical |
+| FR6 | Offline Mode | Ability to record and queue uploads for low-connectivity areas | Medium |
+
+## 4. Non-Functional Requirements
+- **Accuracy:** ASR Word Error Rate (WER) optimized for Indic languages.
+- **Latency:** RAG responses under 3 seconds.
+- **Ethical:** Strict adherence to indigenous data sovereignty.
+- **Scalability:** Support for millions of archival segments.
+
+## 5. User Flow (Advanced FlowChart)
 ```mermaid
-journey
-    title LokKatha AI User Journey
-    section Recording
-      Capture : 5s
-      Consent : 10s
-    section Processing
-      Transcribe : 20s
-      Translate & Summarize : 30s
-      Embed : 15s
-    section Storing
-      Save Metadata : 5s
-      Save Embedding : 5s
-    section Querying
-      Search : 10s
-      Receive Answer : 5s
+flowchart TD
+    Start([Start]) --> Record[Record Interview]
+    Record --> Consent{Consent Obtained?}
+    Consent -- No --> End([End])
+    Consent -- Yes --> Upload[Upload Audio]
+    Upload --> ASR[Whisper ASR Processing]
+    ASR --> LLM[Gemma 4 Analysis]
+    
+    subgraph Analysis_Pipeline
+        LLM --> Sum[Summarization]
+        LLM --> Trans[Translation]
+        LLM --> Tags[Cultural Tagging]
+        LLM --> Emb[Embedding Generation]
+    end
+    
+    Sum --> DB[(Supabase PostgreSQL)]
+    Trans --> DB
+    Tags --> DB
+    Emb --> VDB[(Vector DB)]
+    
+    DB --> Search[Knowledge Base Search]
+    VDB --> Search
+    Search --> RAG[RAG + Gemma 4]
+    RAG --> Answer([User Answer])
 ```
 
-## 4. Feature Backlog (Kanban)
+## 6. Project Kanban
 ```mermaid
-flowchart LR
-    A[Record Audio] --> B[Upload & Transcribe]
-    B --> C[Generate Summary & Tags]
-    C --> D[Store in PostgreSQL]
-    D --> E[Create Embedding]
-    E --> F[Index in ChromaDB]
-    F --> G[Enable RAG Q&A]
-    G --> H[User Query Interface]
-    style A fill:#2ecc71,stroke:#1e8449
-    style H fill:#e74c3c,stroke:#c0392b
+kanban
+  Todo
+    - Implement Voice Cloning Consent
+    - Heritage Map Integration
+    - Mobile PWA Support
+  In Progress
+    - Whisper Fine-tuning
+    - Gemma 4 Prompt Engineering
+    - Supabase Schema Design
+  Done
+    - Idea Definition
+    - Research Analysis
+    - Tech Stack Selection
 ```
-
-## 5. XY Chart – Language Usage Projection
-```mermaid
-pie
-    title Projected Language Distribution (2026‑2028)
-    "Hindi" : 45
-    "Bengali" : 20
-    "Bengali" : 15
-    "Tamil" : 10
-    "Telugu" : 7
-    "Others" : 3
-```
-
-## 6. Roadmap (High‑Level Timeline)
-```mermaid
-gantt
-    title LokKatha AI Roadmap
-    dateFormat  YYYY-MM
-    section Planning
-    Market Research        :a1, 2026-01, 1mo
-    section Development
-    ASR Integration        :a2, after a1, 2mo
-    Gemma Integration      :a3, after a2, 2mo
-    Database Setup         :a4, after a3, 1mo
-    section Launch
-    MVP Release            :b1, after a4, 1mo
-    section Growth
-    Offline Mode           :b2, after b1, 2mo
-    Multi‑Language Expansion :b3, after b2, 3mo
-```
-
-## 7. Success Metrics
-- **Transactions per month** > 10,000
-- **User satisfaction** > 4.5/5
-- **Recordings archived** > 5,000 hrs within 12 months
-- **Search accuracy** > 90% (precision@5)
-
-## 8. Assumptions & Constraints
-- Reliable internet for cloud deployment; offline mode planned for field use.
-- Volunteers will complete consent forms before recording.
-- Gemma 4 API quotas will be monitored to control cost.
-
-## 9. Risks
-- **Low WER for low‑resource dialects** – mitigated by fine‑tuning on regional datasets.
-- **Ethical misuse of content** – mitigated by strict access controls and community oversight.

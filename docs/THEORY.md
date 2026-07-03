@@ -1,210 +1,66 @@
-# Theory Document – LokKatha AI
+# Theory & Framework — LokKatha AI
 
-## 1. Core Functional Modules
-| Module | Primary Functions | Key Outputs |
-|--------|-------------------|------------|
-| **Recording** | Capture audio, store locally, embed consent metadata | `audio_file`, `consent_record` |
-| **ASR** | Whisper transcription, language detection, text normalization | `transcript` |
-| **Summarization & Translation** | Generate title, summary, translations (EN, BN, HI), cultural tags, keywords | `title`, `summary`, `translations`, `cultural_tags`, `keywords` |
-| **Embedding Generation** | Produce semantic description, convert to dense vector | `embedding_vector` |
-| **Storage** | Persist interview metadata, transcript, summary, embedding | `interview_id`, `metadata_json` |
-| **Vector Indexing** | Index embeddings, support hybrid search | `chroma_index` |
-| **Retrieval‑Augmented Generation (RAG)** | Retrieve relevant chunks, prompt engineering, answer generation | `answer`, `citations` |
-| **Query Interface** | Expose REST/GraphQL, UI search, Q&A widget | `search_results`, `response_json` |
+## 1. Theoretical Foundation
 
-## 2. Python Libraries & Packages
-```mermaid
-graph LR
-    A[Python 3.11] --> B[FastAPI]
-    A --> C[Whisper.cpp]
-    A --> D[Gemma 4 via Ollama/HF]
-    A --> E[LangChain]
-    A --> F[ChromaDB]
-    A --> G[psycopg2-binary]
-    A --> H[Supabase Python Client]
-    A --> I[Pydantic]
-    A --> J[Matplotlib / Plotly]
-    B --> K[REST endpoints]
-    C --> L[ASR service]
-    D --> M[LLM inference]
-    E --> N[RAG orchestration]
-    F --> O[Vector store]
-    O --> P[Hybrid search]
-    P --> Q[Retrieve context]
-    Q --> M
-    M --> N
-    N --> R[Answer generation]
-    R --> S[Response]
-```
+### Automatic Speech Recognition (ASR)
+We use **OpenAI Whisper**, a transformer-based encoder-decoder model. 
+- **Theory:** It leverages a large-scale weakly supervised pre-training on 680,000 hours of multilingual and multitask supervised data.
+- **Optimization:** For Indic languages, we employ **Prompt-Tuning** (providing the model with language-family context) and **Custom BPE Tokenization** to reduce Word Error Rate (WER).
 
-## 3. Theoretical Foundations
-- **Automatic Speech Recognition (ASR):** Whisper’s encoder‑decoder architecture; multilingual tokenization; fine‑tuning on low‑resource Indic corpora reduces Word Error Rate (WER) by 15‑20 %.
-- **Large Language Models (LLM):** Gemma 4’s decoder‑only transformer; instruction‑tuned for Indic languages; supports direct Bengali, Hindi, and Hinglish generation without script fallback.
-- **Retrieval‑Augmented Generation (RAG):** Hybrid search merging dense vectors (ChromaDB) with sparse BM25; ensures factual grounding and citation.
-- **Embedding Theory:** Dense vector representations capture semantic meaning; multi‑lingual models (e5‑large, BGE‑M3) enable cross‑lingual retrieval.
-- **Vector Databases:** ChromaDB’s hybrid indexing (dense + sparse) and metadata filtering enable efficient, context‑aware retrieval over thousands of transcripts.
+### Large Language Models (LLM) - Gemma 4
+**Gemma 4** serves as the cognitive engine.
+- **Zero-Shot Translation:** Using its inherent multilingual capabilities to translate without explicit pairs.
+- **Summarization:** Implementing *Abstractive Summarization* to condense oral histories while preserving cultural nuance.
 
-## 4. Integration with Supabase
-```mermaid
-erDiagram
-    SUPABASE[TABLE interviews] ||--o{ TRANSCRIPT : contains
-    SUPABASE[TABLE summaries] ||--o{ SUMMARY : stores
-    SUPABASE[TABLE embeddings] ||--o{ EMBEDDING : holds
-    INTERVIEW ||--|| METADATA : links
-    METADATA }|..| SUPABASE : maps
-```
+### Retrieval-Augmented Generation (RAG)
+RAG solves the "hallucination" problem in LLMs.
+- **The Process:** $\text{Query} \rightarrow \text{Embedding} \rightarrow \text{Vector Search} \rightarrow \text{Augmented Prompt} \rightarrow \text{LLM}$.
+- **Cross-Lingual Retrieval:** By using models like `multilingual-e5-large`, a query in English can retrieve a transcript in Bengali because they map to the same vector space.
 
-- **Why Supabase:** Real‑time PostgreSQL layer, built‑in authentication, Row Level Security (RLS), and REST/GraphQL APIs simplify consent‑aware access control.
-- **Sync Strategy:** Periodic batch upload from local PostgreSQL → Supabase; conflict resolution via timestamps; deletions propagated both ways.
-- **API Layer:** FastAPI surface wraps Supabase client; endpoints expose filtered retrieval (language, tags, date).
+## 2. Supabase Integration Theory
+Supabase provides the backend infrastructure. We merge it with AI models as follows:
+- **Relational Data:** User profiles, interview metadata, and consent logs are stored in standard PostgreSQL tables.
+- **Vector Data:** We utilize `pgvector` (via Supabase) or a sidecar `ChromaDB`.
+- **Authentication:** Supabase Auth manages field volunteer access levels.
+- **Storage:** Supabase Storage handles the `.wav` and `.mp3` files.
 
-## 5. C4 Diagram – System Context
-```mermaid
-graph TD
-    C4_Context[System Context]
-    C4_Context -->|Users| Users[Field Workers, Researchers]
-    C4_Context -->|External| External[NGOs, Govt Archives]
-    C4_Context -->|AI Stack| AI[AI Components]
-    AI -->|Processing| LLM[Gemma 4]
-    AI -->|Storage| DB[(PostgreSQL)]
-    AI -->|Vectors| VDB[(ChromaDB)]
-    AI -->|Analytics| BI[Dashboard]
-    Users -->|Query| API[FastAPI]
-    API -->|Retrieve| VDB
-    API -->|Generate| LLM
-    LLM -->|Answer| API
-    BI -->|Report| Users
-```
+## 3. Technical Stack (Future-Proof)
 
-## 6. Component Diagram – Class Overview
-```mermaid
-classDiagram
-    class Interview {
-        +String id
-        +String audioPath
-        +String language
-        +DateTime recordedAt
-        +JSON consent
-    }
-    class Transcript {
-        +String interviewId
-        +String text
-    }
-    class Summary {
-        +String interviewId
-        +String title
-        +String summary
-        +String translations
-        +String culturalTags
-    }
-    class Embedding {
-        +String interviewId
-        +Vector vector
-    }
-    class Metadata {
-        +String interviewId
-        +JSON data
-    }
-    Interview "1" *-- "1" Transcript : produces
-    Interview "1" *-- "1" Summary : yields
-    Interview "1" *-- "1" Embedding : creates
-    Interview "1" *-- "1" Metadata : stores
-    Transcript "1" *-- "1" Embedding : triggers
-```
+### Libraries & Packages
+| Category | Package | Purpose |
+|----------|---------|---------|
+| **API** | `fastapi`, `uvicorn` | High-performance async backend |
+| **ASR** | `openai-whisper`, `faster-whisper` | Speech-to-text processing |
+| **LLM** | `langchain`, `google-generativeai` | LLM orchestration and Gemma 4 API |
+| **Vector DB** | `chromadb`, `pgvector` | Storage and retrieval of embeddings |
+| **Embeddings**| `sentence-transformers` | Generating `multilingual-e5` vectors |
+| **Database** | `supabase-py`, `sqlalchemy` | Database ORM and client |
+| **Audio** | `librosa`, `pydub` | Audio preprocessing and denoising |
 
-## 7. Data Flow – Advanced Flowchart
-```mermaid
-flowchart LR
-    A[Record Audio] --> B[Voice Activity Detection & Denoise]
-    B --> C[Whisper ASR]
-    C --> D[Raw Transcript]
-    D --> E[Normalization & Language Tagging]
-    E --> F[Gemma 4: Summarize, Translate, Tag]
-    F --> G[Extract Structured Metadata]
-    G --> H[PostgreSQL: Persist Interview]
-    H --> I[Gemma 4: Generate Description]
-    I --> J[Embedding Model: Vectorise]
-    J --> K[ChromaDB: Index Vector]
-    K --> L[Hybrid Search (Dense+BM25)]
-    L --> M[RAG Prompt Assembly]
-    M --> N[Gemma 4: Generate Answer + Citations]
-    N --> O[REST API Response]
-    O --> P[User UI]
-    style A fill:#ffcc00,stroke:#b8860b
-    style P fill:#e74c3c,stroke:#c0392b
-```
+### Proposed Functions
+- `transcribe_audio(file_path)` $\rightarrow$ Returns text + timestamps.
+- `analyze_transcript(text)` $\rightarrow$ Returns JSON (Summary, Translation, Tags).
+- `generate_embedding(text)` $\rightarrow$ Returns vector.
+- `rag_query(user_query)` $\rightarrow$ Returns cited answer.
 
-## 8. Model Distribution (Pie Chart)
-```mermaid
-pie
-    title Model Size Allocation
-    "1B" : 10
-    "4B" : 25
-    "12B" : 40
-    "27B" : 25
-```
-
-## 9. Multi‑Layer Event Modeling
-```mermaid
-stateDiagram-v2
-    [*] --> Recording
-    Recording --> Preprocess
-    Preprocess --> ASR
-    ASR --> Transcript
-    Transcript --> Summarization
-    Summarization --> Tagging
-    Tagging --> Embedding
-    Embedding --> Storage
-    Storage --> Retrieval
-    Retrieval --> RAG
-    RAG --> Answer
-    Answer --> [*]
-```
-
-## 10. Research Roadmap (Gantt)
-```mermaid
-gantt
-    title Research Phase
-    dateFormat  YYYY-MM
-    section Literature
-    Survey Papers        :a1, 2026-01, 1mo
-    section Data
-    Dataset Curation     :a2, after a1, 2mo
-    section Model Tuning
-    ASR Fine‑tune        :a3, after a2, 1mo
-    Gemma Fine‑tune      :a4, after a3, 2mo
-    section Evaluation
-    Benchmarking         :a5, after a4, 1mo
-    section Documentation
-    Write Docs           :a6, after a5, 1mo
-```
-
-## 11. Technical Mindmap
+## 4. Mindmap: System Capabilities
 ```mermaid
 mindmap
-    root LokKatha AI Stack
-        ASR
-            Whisper
-            Fine‑tuning
-        LLM
-            Gemma 4
-            Prompt Engineering
-        Embeddings
-            multilingual‑e5
-            BGE‑M3
-        Vector DB
-            ChromaDB
-            Hybrid Search
-        DB
-            PostgreSQL
-            Supabase
-        API
-            FastAPI
-        Frontend
-            React
-            Streamlit
-        Deployment
-            Docker
-            K8s
-            Railway
+  root((LokKatha AI))
+    Preservation
+      ASR Transcription
+      Multilingual Translation
+      Cultural Tagging
+    Discovery
+      Semantic Search
+      RAG Q&A
+      Heritage Mapping
+    Ethics
+      Informed Consent
+      Indigenous Sovereignty
+      Data Encryption
+    Infrastructure
+      Supabase PostgreSQL
+      ChromaDB Vector Store
+      Gemma 4 LLM
 ```

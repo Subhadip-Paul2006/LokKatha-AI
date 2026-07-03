@@ -1,190 +1,105 @@
-# Technical Research Document (TRD) – LokKatha AI
+# Technical Requirements Document (TRD) — LokKatha AI
 
-## 1. Overview
-This document details the technical research, architecture, and implementation plan for LokKatha AI, focusing on ASR, multilingual LLM pipelines, vector databases, and retrieval‑augmented generation.
-
-## 2. High‑Level Architecture (C4 Diagram)
+## 1. System Architecture (C4 Model - Level 2)
 ```mermaid
-graph TD
-    C4_Context[System Context]
-    C4_Context -->|Users| Users[Users]
-    C4_Context -->|External Systems| External[External Systems]
-    C4_Context -->|AI Components| AI[AI Components]
-    AI -->|Processing| LLM[Gemma 4 LLM]
-    AI -->|Storage| DB[(PostgreSQL)]
-    AI -->|Embeddings| VDB[(ChromaDB)]
-    AI -->|Analytics| BI[Analytics Dashboard]
-    Users -->|Query| API[FastAPI]
-    API -->|Retrieve| VDB
-    API -->|Generate Answer| LLM
-    LLM -->|Answer| API
+C4Container
+    title Container diagram for LokKatha AI
+    Person(volunteer, "Volunteer", "Records oral history")
+    Person(user, "Researcher", "Queries the archive")
+    
+    Container(frontend, "Frontend", "React/Streamlit", "User Interface")
+    Container(api, "Backend API", "FastAPI", "Orchestrates ASR, LLM, and DB")
+    
+    ContainerDb(postgres, "Supabase", "PostgreSQL", "Stores transcripts, metadata, and users")
+    ContainerDb(chroma, "ChromaDB", "Vector Store", "Stores semantic embeddings")
+    
+    Container(whisper, "Whisper Service", "OpenAI Whisper", "Speech-to-Text")
+    Container(gemma, "Gemma 4 Engine", "LLM", "Summarization, Translation, RAG")
+
+    Rel(volunteer, frontend, "Uploads audio", "HTTPS")
+    Rel(user, frontend, "Searches archive", "HTTPS")
+    Rel(frontend, api, "API Calls", "JSON/REST")
+    Rel(api, whisper, "Sends audio", "gRPC/REST")
+    Rel(api, gemma, "Sends text", "REST/Local")
+    Rel(api, postgres, "Reads/Writes", "SQL")
+    Rel(api, chroma, "Queries vectors", "API")
+    Rel(gemma, chroma, "Retrieves context", "API")
 ```
 
-## 3. Component Diagram (Class Diagram)
-```mermaid
-classDiagram
-    class Interview {
-        +String id
-        +String audioPath
-        +String language
-        +DateTime recordedAt
-    }
-    class Transcript {
-        +String interviewId
-        +String text
-        +String pipelineVersion
-    }
-    class Summary {
-        +String interviewId
-        +String title
-        +String summary
-        +String translations
-        +String culturalTags
-    }
-    class Embedding {
-        +String interviewId
-        +Vector vector
-    }
-    class Metadata {
-        +String interviewId
-        +JSON metadata
-    }
-    Interview "1" *-- "1" Transcript : has
-    Interview "1" *-- "1" Summary : produces
-    Interview "1" *-- "1" Embedding : generates
-    Interview "1" *-- "1" Metadata : stores
-    Transcript "1" *-- "1" Embedding : triggers
-```
-
-## 4. Entity‑Relationship Diagram
+## 2. Data Model (Entity Relationship Diagram)
 ```mermaid
 erDiagram
-    INTERVIEW ||--o{ TRANSCRIPT : has
-    INTERVIEW ||--o{ SUMMARY : produces
-    INTERVIEW ||--o{ EMBEDDING : generates
-    TRANSCRIPT ||--o{ EMBEDDING : generates
-    SUMMARY ||--o{ TAGS : generates
-    EMBEDDING ||--o{ CHROMA : stores
-    INTERVIEW ||--o{ METADATA : contains
-    METADATA ||--o{ LANGUAGE : maps
+    USER ||--o{ INTERVIEW : records
+    INTERVIEW ||--|| CONSENT : has
+    INTERVIEW ||--o{ TRANSCRIPT : generates
+    TRANSCRIPT ||--o{ TAG : contains
+    TRANSCRIPT ||--|| EMBEDDING : represented_by
+    
+    USER {
+        uuid id PK
+        string name
+        string role
+    }
+    INTERVIEW {
+        uuid id PK
+        string audio_url
+        datetime date
+        string location
+        uuid user_id FK
+    }
+    CONSENT {
+        uuid id PK
+        boolean granted
+        string signature_url
+        datetime timestamp
+    }
+    TRANSCRIPT {
+        uuid id PK
+        text raw_text
+        text summary
+        json translations
+        uuid interview_id FK
+    }
+    TAG {
+        uuid id PK
+        string label
+        uuid transcript_id FK
+    }
+    EMBEDDING {
+        uuid id PK
+        vector vec
+        uuid transcript_id FK
+    }
 ```
 
-## 5. Data Flow – Large Advanced Flowchart
+## 3. Sequence Diagram (RAG Query Flow)
 ```mermaid
-flowchart LR
-    A[Field Recording] --> B[Audio Pre‑processing (VAD, Denoise)]
-    B --> C[Whisper ASR]
-    C --> D[Raw Transcript]
-    D --> E[Cleaning & Normalization]
-    E --> F[Gemma 4: Title, Summary, Translations, Tags]
-    F --> G[Metadata Extraction]
-    G --> H[PostgreSQL: Store Interview, Transcript, Summary]
-    H --> I[Gemma 4: Generate Embedding Description]
-    I --> J[Embedding Model: Create Vector]
-    J --> K[ChromaDB: Index Vector]
-    K --> L[Hybrid Search (Dense + BM25)]
-    L --> M[RAG Pipeline: Retrieve + Prompt]
-    M --> N[Gemma 4: Generate Answer + Citations]
-    N --> O[User Interface]
-    style A fill:#ffcc00,stroke:#b8860b
-    style O fill:#e74c3c,stroke:#c0392b
+sequenceDiagram
+    participant U as User
+    participant API as FastAPI
+    participant VDB as ChromaDB
+    participant LLM as Gemma 4
+    participant DB as Supabase
+
+    U->>API: Query "What are traditional farming methods in Bengal?"
+    API->>VDB: Convert query to vector & search
+    VDB-->>API: Return top-k relevant transcript chunks
+    API->>DB: Fetch full metadata for these chunks
+    DB-->>API: Return narrator info, dates, and full text
+    API->>LLM: Prompt(Context + Query)
+    LLM-->>API: Generate factual answer with citations
+    API-->>U: Display Answer
 ```
 
-## 6. Model Performance XY Chart
+## 4. Block Diagram (Processing Pipeline)
 ```mermaid
-scatter
-    title WER (%) vs Language Coverage
-    "Hindi" : 12, 0.95
-    "Bengali" : 15, 0.92
-    "Tamil" : 18, 0.90
-    "Telugu" : 20, 0.88
-    "Marathi" : 22, 0.85
-    "Gujarati" : 25, 0.84
-    "Odia" : 28, 0.80
-```
-
-## 7. Performance Distribution (Pie Chart)
-```mermaid
-pie
-    title Model Size Distribution
-    "1B" : 10
-    "4B" : 25
-    "12B" : 40
-    "27B" : 25
-```
-
-## 8. Multi‑Layer Event Modeling
-```mermaid
-stateDiagram-v2
-    [*] --> Recording
-    Recording --> Preprocess
-    Preprocess --> ASR
-    ASR --> Transcript
-    Transcript --> Summarization
-    Summarization --> Tagging
-    Tagging --> Embedding
-    Embedding --> Storage
-    Storage --> Retrieval
-    Retrieval --> RAG
-    RAG --> Answer
-    Answer --> [*]
-```
-
-## 9. Research Task Kanban
-```mermaid
-flowchart LR
-    A[Literature Survey] --> B[Dataset Collection]
-    B --> C[Model Fine‑tuning]
-    C --> D[Embedding Strategy]
-    D --> E[RAG Pipeline Design]
-    E --> F[Benchmarking]
-    F --> G[Documentation]
-    style G fill:#2ecc71,stroke:#1e8449
-```
-
-## 10. Timeline (Gantt) – Research Phase
-```mermaid
-gantt
-    title Research Phase Timeline
-    dateFormat  YYYY-MM
-    section Literature
-    Survey Papers        :a1, 2026-01, 1mo
-    section Data
-    Dataset Curation     :a2, after a1, 2mo
-    section Model Development
-    Fine‑tune ASR        :a3, after a2, 1mo
-    Fine‑tune Gemma      :a4, after a3, 2mo
-    section Evaluation
-    Benchmarking         :a5, after a4, 1mo
-    section Documentation
-    Write Technical Docs :a6, after a5, 1mo
-```
-
-## 11. Mindmap – Technical Stack
-```mermaid
-mindmap
-    root LokKatha AI Stack
-        ASR
-            Whisper
-            Fine‑tuning
-        LLM
-            Gemma 4
-            Prompt Engineering
-        Embeddings
-            multilingual‑e5
-            BGE‑M3
-        Vector DB
-            ChromaDB
-            Hybrid Search
-        DB
-            PostgreSQL
-        API
-            FastAPI
-        Frontend
-            React
-            Streamlit
-        Deployment
-            Docker
-            K8s
-            Railway
+block-beta
+    columns 4
+    Audio[Audio Input] --> ASR[Whisper ASR]
+    ASR --> LLM[Gemma 4]
+    LLM --> DB[(Postgres)]
+    LLM --> VDB[(Vector DB)]
+    VDB --> RAG[RAG Engine]
+    DB --> RAG
+    RAG --> Out[Final Answer]
 ```
