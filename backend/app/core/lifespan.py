@@ -7,6 +7,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.core.config import Settings
+from app.database.connection import close_database, init_database
 
 logger = logging.getLogger(__name__)
 
@@ -25,6 +26,11 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.info("Debug mode: %s", settings.debug)
     logger.info("CORS origins: %s", settings.cors_origin_list)
 
+    # Initialize Database Connection
+    supabase_client = init_database(settings)
+    app.state.supabase = supabase_client
+
     yield
 
     logger.info("Shutting down %s", settings.app_name)
+    close_database(supabase_client)
