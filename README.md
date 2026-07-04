@@ -187,6 +187,7 @@ All technical, product, theoretical, and strategic documentation is located in t
 - 💡 [**Project Idea & Concept**](docs/IDEA.md) — Original project concept, goals, pipeline steps, and FAQ.
 - 🔬 [**Research & Feasibility Analysis**](docs/RESEARCH.md) — Domain research, ASR/LLM/RAG technical analysis, ethical framework, and references.
 - 🎨 [**Design System & Frontend Specification**](docs/DESIGN_SPEC.md) — Color system, typography, motion, page structure, and component mapping.
+- ⚙️ [**Backend Reference (FastAPI)**](docs/BACKEND.md) — Tech stack, project structure, environment variables, and phase roadmap.
 - 📋 [**Product Requirements Document (PRD)**](docs/PRD.md) — Product vision, user personas, functional specs & feature matrix.
 - 🔧 [**Technical Requirements Document (TRD)**](docs/TRD.md) — Architectural blueprints, C4 models, ERDs, sequence diagrams.
 - 📚 [**Theoretical Framework (THEORY)**](docs/THEORY.md) — ASR math, LLM tokenization, embedding mechanics, and RAG theory.

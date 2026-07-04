@@ -1,0 +1,4 @@
+# This file is intentionally minimal.
+# All ignore rules for the backend (Python, .venv, uploads, etc.)
+# are consolidated in the root .gitignore of this monorepo.
+# See: ../.gitignore

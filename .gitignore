@@ -41,15 +41,41 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# === Python (future backend) ===
+# === Python (backend/) ===
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 .venv/
 venv/
+env/
 *.egg-info/
 dist/
+build/
 *.egg
+
+# Python env files (backend has its own .env)
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking / linting
+.mypy_cache/
+.ruff_cache/
+
+# Logs
+*.log
+logs/
+
+# Backend runtime upload staging (keep dir via .gitkeep)
+backend/uploads/*
+!backend/uploads/.gitkeep
 
 # === Testing ===
 coverage/
