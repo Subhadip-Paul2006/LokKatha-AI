@@ -70,7 +70,6 @@ Inter or Source Sans Pro, weight 400/500, line-height `1.6`–`1.7` (generous �
 Playfair Display Italic — reserved *only* for folk tales, quoted oral testimony, and pull-quotes. Never for UI labels or buttons.
 
 ### Type scale (Tailwind-mappable)
-
 xs   12px   meta/captions
 sm   14px   secondary text
 base 16px   body
@@ -80,6 +79,7 @@ xl   22px   card titles
 3xl  36px   section heads
 4xl  48px   hero heading (mobile: 32px)
 5xl  64px   hero heading (desktop only)
+
 ---
 
 ## 4. Spacing, Borders, Shadows
@@ -126,6 +126,7 @@ Motion should feel like **turning a page**, not like a SaaS product's micro-inte
 ---
 
 ## 7. Page Structure — Landing
+
 Navigation (sticky, transparent → cream on scroll)
 ↓
 Hero
@@ -166,7 +167,7 @@ Grid, 3-col desktop / 2-col tablet / 1-col mobile. Card: illustration thumbnail,
 Horizontal scroll-snap timeline, decades as anchor points, story markers along it. On mobile, converts to vertical timeline (horizontal scroll on touch devices has poor discoverability — don't force it).
 
 ### Footer
-Clay background, `paper-old` text. "Made with ♥ using Gemma" · mission line · GitHub · Team · NGO credit.
+Clay background, `paper-old` text. "Made with ♥️ using Gemma" · mission line · GitHub · Team · NGO credit.
 
 ---
 
@@ -179,8 +180,8 @@ Manuscript-styled card containing: Title, District/location tag, Story text (Pla
 
 ## 9. AI Processing Screen
 Vertical progress-step timeline, not a spinner:
-[04/07, 4:14 pm] anynnomous~: Recording → Transcribing → Gemma Thinking → Generating Summary → Translating → Saving
-[04/07, 4:14 pm] anynnomous~: Each step: icon fades from `temple-stone` (pending) → `muted-gold` (active, subtle pulse) → `forest-green` (done, checkmark). This is a state machine — build it as a single component driven by a `status` enum, not six hardcoded screens.
+Recording → Transcribing → Gemma Thinking → Generating Summary → Translating → Saving
+Each step: icon fades from `temple-stone` (pending) → `muted-gold` (active, subtle pulse) → `forest-green` (done, checkmark). This is a state machine — build it as a single component driven by a `status` enum, not six hardcoded screens.
 
 ---
 
@@ -209,9 +210,9 @@ Gemma's voice: a patient village librarian — warm, unhurried, never robotic, n
 ---
 
 ## 13. Responsive Breakpoints
-Mobile: <640px — single column, hero illustration moves below heading/CTA, timeline goes vertical
-Tablet: 640–1024px — 2-col grids, nav condenses to hamburger
-Desktop: >1024px — full layout as specified above
+Mobile:  <640px   — single column, hero illustration moves below heading/CTA, timeline goes vertical
+Tablet:  640–1024px — 2-col grids, nav condenses to hamburger
+Desktop: >1024px  — full layout as specified above
 Design desktop-first visually, but build mobile-first in Tailwind (`sm:` `md:` `lg:` prefixes) — faster to extend than to retrofit.
 
 ---
@@ -237,8 +238,3 @@ Design desktop-first visually, but build mobile-first in Tailwind (`sm:` `md:` `
 
 ## 16. Final Design Goal
 A judge should feel, within seconds, that LokKatha AI is not another AI chatbot wrapper — it's a digital cultural archive that happens to be powered by Gemma, where the technology is deliberately quiet and the heritage is deliberately loud.
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 2a31e2b69ea01ce29bc023fef6c789adfedb25a9

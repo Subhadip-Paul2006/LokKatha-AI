@@ -1,0 +1,258 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+/*
+  LokKatha AI — Living Cultural Memory
+  Warm archival palette. Light-only. Every token traces to palm-leaf
+  manuscripts, terracotta temples, courtyard libraries, and folk art.
+*/
+
+:root {
+  /* Backgrounds & surfaces */
+  --cream: #f7f1e5;
+  --palmleaf: #efe4c8;
+  --paper-old: #fff8ee;
+
+  /* Text */
+  --ink: #2b2118;
+  --brown-dark: #4b3425;
+
+  /* Accents (headings / icons / large text only) */
+  --terracotta: #b65a38;
+  --terracotta-deep: #8c4529;
+  --clay-orange: #c87941;
+  --muted-gold: #c9a646;
+  --forest-green: #58734d;
+  --accent-red: #a2362a;
+  --temple-stone: #736357;
+
+  /* Semantic mappings for shadcn primitives */
+  --radius: 0.75rem;
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--paper-old);
+  --card-foreground: var(--ink);
+  --popover: var(--paper-old);
+  --popover-foreground: var(--ink);
+  --primary: var(--clay-orange);
+  --primary-foreground: #fff8ee;
+  --secondary: var(--palmleaf);
+  --secondary-foreground: var(--ink);
+  --muted: var(--palmleaf);
+  --muted-foreground: var(--temple-stone);
+  --accent: var(--muted-gold);
+  --accent-foreground: var(--ink);
+  --destructive: var(--accent-red);
+  --border: color-mix(in srgb, var(--brown-dark) 45%, transparent);
+  --input: color-mix(in srgb, var(--brown-dark) 40%, transparent);
+  --ring: var(--muted-gold);
+}
+
+@theme inline {
+  /* Named color utilities */
+  --color-cream: var(--cream);
+  --color-palmleaf: var(--palmleaf);
+  --color-paper-old: var(--paper-old);
+  --color-ink: var(--ink);
+  --color-brown-dark: var(--brown-dark);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-deep: var(--terracotta-deep);
+  --color-clay-orange: var(--clay-orange);
+  --color-muted-gold: var(--muted-gold);
+  --color-forest-green: var(--forest-green);
+  --color-accent-red: var(--accent-red);
+  --color-temple-stone: var(--temple-stone);
+
+  /* Semantic tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Fonts */
+  --font-heading: var(--font-heading), 'Cormorant Garamond', ui-serif, serif;
+  --font-body: var(--font-body), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-quote: var(--font-quote), 'Playfair Display', ui-serif, serif;
+  --font-accent: var(--font-accent), 'Kalam', ui-serif, cursive;
+  --font-serif: var(--font-heading), 'Cormorant Garamond', ui-serif, serif;
+  --font-sans: var(--font-body), 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Old-paper shadow */
+  --shadow-paper: 0 2px 8px rgba(43, 33, 24, 0.08), 0 1px 2px rgba(43, 33, 24, 0.12);
+  --shadow-paper-lg: 0 8px 24px rgba(43, 33, 24, 0.1), 0 2px 6px rgba(43, 33, 24, 0.12);
+
+  /* Motion easing (page-turn feel) */
+  --ease-page: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'kern', 'liga';
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.012em;
+    line-height: 1.18;
+  }
+  /* Visible focus ring in muted-gold, never removed */
+  :focus-visible {
+    outline: 2px solid var(--muted-gold);
+    outline-offset: 2px;
+  }
+
+  /* Bengali locale: swap to Noto Bengali faces so glyphs render properly */
+  .lang-bn body,
+  .lang-bn {
+    font-family: var(--font-bn-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+  .lang-bn h1,
+  .lang-bn h2,
+  .lang-bn h3,
+  .lang-bn h4,
+  .lang-bn .font-heading {
+    font-family: var(--font-bn-serif), ui-serif, serif;
+  }
+  .lang-bn .font-quote {
+    font-family: var(--font-bn-serif), ui-serif, serif;
+    font-style: normal;
+  }
+  .lang-bn .font-accent {
+    font-family: var(--font-bn-sans), ui-sans-serif, sans-serif;
+  }
+  .lang-bn .font-body,
+  .lang-bn .font-sans {
+    font-family: var(--font-bn-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-quote {
+    font-family: var(--font-quote);
+  }
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+  .shadow-paper {
+    box-shadow: var(--shadow-paper);
+  }
+  .shadow-paper-lg {
+    box-shadow: var(--shadow-paper-lg);
+  }
+
+  /* Non-distracting paper grain (<=4% opacity) */
+  .paper-grain {
+    position: relative;
+  }
+  .paper-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+}
+
+/* Page-turn entry animations */
+@keyframes lk-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes lk-rise-sm {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes lk-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes lk-leaf-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes lk-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.lk-rise {
+  animation: lk-rise 600ms var(--ease-page) both;
+}
+.lk-rise-sm {
+  animation: lk-rise-sm 450ms var(--ease-page) both;
+}
+.lk-fade {
+  animation: lk-fade 500ms ease-out both;
+}
+.lk-leaf-spin {
+  animation: lk-leaf-spin 4s ease-in-out infinite;
+}
+.lk-pulse {
+  animation: lk-pulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lk-rise,
+  .lk-rise-sm,
+  .lk-fade {
+    animation: lk-fade 300ms ease-out both;
+  }
+  .lk-leaf-spin,
+  .lk-pulse {
+    animation: none;
+  }
+}

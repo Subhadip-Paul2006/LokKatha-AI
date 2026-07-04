@@ -184,6 +184,9 @@ API Documentation will be live at `http://localhost:8000/docs`.
 
 All technical, product, theoretical, and strategic documentation is located in the [`docs/`](docs/) directory:
 
+- 💡 [**Project Idea & Concept**](docs/IDEA.md) — Original project concept, goals, pipeline steps, and FAQ.
+- 🔬 [**Research & Feasibility Analysis**](docs/RESEARCH.md) — Domain research, ASR/LLM/RAG technical analysis, ethical framework, and references.
+- 🎨 [**Design System & Frontend Specification**](docs/DESIGN_SPEC.md) — Color system, typography, motion, page structure, and component mapping.
 - 📋 [**Product Requirements Document (PRD)**](docs/PRD.md) — Product vision, user personas, functional specs & feature matrix.
 - 🔧 [**Technical Requirements Document (TRD)**](docs/TRD.md) — Architectural blueprints, C4 models, ERDs, sequence diagrams.
 - 📚 [**Theoretical Framework (THEORY)**](docs/THEORY.md) — ASR math, LLM tokenization, embedding mechanics, and RAG theory.
@@ -192,7 +195,7 @@ All technical, product, theoretical, and strategic documentation is located in t
 - 🎯 [**Hackathon Pitch Deck**](docs/PITCH_DECK.md) — Winning pitch structure, hook, business model, and closing statement.
 - 🎬 [**Second-by-Second Demo Script**](docs/DEMO_SCRIPT.md) — Screen actions, speaker script, applause triggers, and API backup fallback.
 - ❓ [**Judges FAQ Playbook (160 Q&As)**](docs/JUDGES_FAQ.md) — 50 Tech, 50 Product, 20 AI, 20 Gemma-specific & 20 Social Impact Q&As.
-- 🎨 [**UI/UX Design & Brand System**](docs/DESIGN_SYSTEM_UIUX.md) — Cultural motifs, wireframes, logo/mascot specs, empty/loading states.
+- 🖌️ [**UI/UX Design & Brand System**](docs/DESIGN_SYSTEM_UIUX.md) — Cultural motifs, wireframes, logo/mascot specs, empty/loading states.
 - 💡 [**Hackathon Strategy & MVP Execution**](docs/HACKATHON_STRATEGY_PLAYBOOK.md) — Judge strategy, buzzwords, MVP prioritization & crash survival guide.
 
 ---
