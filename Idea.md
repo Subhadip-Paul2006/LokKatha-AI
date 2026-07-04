@@ -159,9 +159,18 @@ lokkatha-ai/
 - For implementation, create `requirements.txt`, API keys, and secure storage for audio and personal data.
 - Obtain informed consent before recording or cloning any voice.
 
-## Next Steps
+## Master Project Documentation Suite
 
-If you'd like, I can also generate:
-- a `requirements.txt` from the dependencies mentioned,
-- example `whisper_service.py` and `gemma.py` stubs,
-- or implementation tasks for each pipeline step.
+All detailed architecture, hackathon guides, pitch scripts, design specs, and FAQs are located in [`docs/`](docs/):
+
+- 📋 [Product Requirements Document (PRD)](docs/PRD.md)
+- 🔧 [Technical Requirements Document (TRD)](docs/TRD.md)
+- 📚 [Theoretical Framework (THEORY)](docs/THEORY.md)
+- 📘 [Complete Project Explanation](docs/PROJECT_EXPLANATION.md)
+- 📊 [Slide-by-Slide PPT Master Guide](docs/PPT_STRUCTURE.md)
+- 🎯 [Hackathon Pitch Deck](docs/PITCH_DECK.md)
+- 🎬 [Second-by-Second Demo Script](docs/DEMO_SCRIPT.md)
+- ❓ [160 Judges FAQ Master Playbook](docs/JUDGES_FAQ.md)
+- 🎨 [UI/UX Design System & Traditional Aesthetics](docs/DESIGN_SYSTEM_UIUX.md)
+- 💡 [Hackathon Strategy & Startup Mentor Playbook](docs/HACKATHON_STRATEGY_PLAYBOOK.md)
+
