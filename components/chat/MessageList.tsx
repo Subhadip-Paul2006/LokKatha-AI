@@ -8,9 +8,10 @@ interface MessageListProps {
   messages: ChatMessage[]
   onSelectSuggestion: (suggestion: string) => void
   onPreviewSource: (source: ChatSource) => void
+  isJudgeMode?: boolean
 }
 
-export function MessageList({ messages, onSelectSuggestion, onPreviewSource }: MessageListProps) {
+export function MessageList({ messages, onSelectSuggestion, onPreviewSource, isJudgeMode }: MessageListProps) {
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export function MessageList({ messages, onSelectSuggestion, onPreviewSource }: M
             message={msg} 
             onSelectSuggestion={onSelectSuggestion} 
             onPreviewSource={onPreviewSource}
+            isJudgeMode={isJudgeMode}
           />
         ))}
         <div ref={bottomRef} className="h-4" />

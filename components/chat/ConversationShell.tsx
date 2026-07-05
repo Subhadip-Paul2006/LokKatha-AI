@@ -15,6 +15,22 @@ export function ConversationShell() {
     () => chatSession.getMessages()
   )
   
+  const isJudgeMode = useSyncExternalStore(
+    (listener) => chatSession.subscribe(listener),
+    () => chatSession.isJudgeMode()
+  )
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'd') {
+        e.preventDefault()
+        chatSession.toggleJudgeMode()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+  
   const [isStreaming, setIsStreaming] = useState(false)
   const [abortController, setAbortController] = useState<AbortController | null>(null)
   const [previewSource, setPreviewSource] = useState<ChatSource | null>(null)
@@ -188,6 +204,7 @@ export function ConversationShell() {
             messages={messages} 
             onSelectSuggestion={handleSend} 
             onPreviewSource={setPreviewSource}
+            isJudgeMode={isJudgeMode}
           />
         </>
       )}

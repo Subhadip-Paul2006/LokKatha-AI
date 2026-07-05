@@ -6,15 +6,17 @@ import { SourceCard } from './SourceCard'
 import { SuggestionChips } from './SuggestionChips'
 import { TypingIndicator } from './TypingIndicator'
 import { getStoryImage } from '@/lib/chat/imageMap'
+import { JudgeDashboard } from './JudgeDashboard'
 import Image from 'next/image'
 
 interface MessageProps {
   message: ChatMessage
   onSelectSuggestion: (suggestion: string) => void
   onPreviewSource: (source: ChatSource) => void
+  isJudgeMode?: boolean
 }
 
-export function Message({ message, onSelectSuggestion, onPreviewSource }: MessageProps) {
+export function Message({ message, onSelectSuggestion, onPreviewSource, isJudgeMode }: MessageProps) {
   const isUser = message.role === 'user'
 
   if (isUser) {
@@ -44,6 +46,11 @@ export function Message({ message, onSelectSuggestion, onPreviewSource }: Messag
             isStreaming={message.status === 'streaming'} 
           />
         </div>
+      )}
+
+      {/* 2.5 Judge Dashboard */}
+      {isJudgeMode && message.metrics && (
+        <JudgeDashboard metrics={message.metrics} sourcesCount={message.sources?.length || 0} />
       )}
 
       {/* 2.5 Curated Image */}
