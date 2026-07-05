@@ -84,3 +84,41 @@ class ConfigurationError(LokKathaError):
 
     def __init__(self, message: str = "Configuration error.") -> None:
         super().__init__(message)
+
+
+# ── AI Service Errors ─────────────────────────────────────────────────────────
+
+
+class AIServiceError(LokKathaError):
+    """Base exception for AI engine failures."""
+
+    def __init__(self, message: str = "AI service error.", *, detail: str | None = None) -> None:
+        super().__init__(message, detail=detail)
+
+
+class GemmaServiceError(AIServiceError):
+    """Raised when the Gemma LLM service fails."""
+
+    def __init__(self, message: str = "Gemma processing failed.", *, detail: str | None = None) -> None:
+        super().__init__(message, detail=detail)
+
+
+class WhisperServiceError(AIServiceError):
+    """Raised when speech transcription fails."""
+
+    def __init__(self, message: str = "Speech transcription failed.", *, detail: str | None = None) -> None:
+        super().__init__(message, detail=detail)
+
+
+class JSONValidationError(AIServiceError):
+    """Raised when an LLM response cannot be parsed or validated as JSON."""
+
+    def __init__(self, message: str = "Invalid JSON response from AI model.", *, detail: str | None = None) -> None:
+        super().__init__(message, detail=detail)
+
+
+class AIPipelineError(AIServiceError):
+    """Raised when the end-to-end AI pipeline fails."""
+
+    def __init__(self, message: str = "AI pipeline processing failed.", *, detail: str | None = None) -> None:
+        super().__init__(message, detail=detail)

@@ -1,0 +1,44 @@
+{prompt_rules}
+
+---
+
+{translation_rules}
+
+---
+
+TASK: Process the following oral heritage recording for the LokKatha AI cultural archive.
+
+Produce ALL of the following in a SINGLE JSON response. Do not make separate calls for summary, translation, or tagging.
+
+INPUT TRANSCRIPT:
+{transcript}
+
+RECORDING METADATA:
+- Detected / Primary Language: {language}
+- Speaker Name: {speaker_name}
+- Speaker Age: {speaker_age}
+- Occupation: {occupation}
+- Village: {village}
+- District: {district}
+- State: {state}
+- Country: {country}
+- Additional Metadata: {extra_metadata}
+
+REQUIRED OUTPUT — return ONLY a valid JSON object (no markdown, no code fences) with this exact schema:
+
+{{
+  "title": "A captivating 5-8 word traditional title for this story",
+  "summary": "A rich 3-4 sentence narrative summary preserving emotional depth",
+  "translations": {{
+    "english": "Fluent English translation preserving idioms and cultural meaning",
+    "bengali": "Standard Bengali translation in Bengali script",
+    "hindi": "Formal Hindi translation in Devanagari script with respectful registers"
+  }},
+  "keywords": ["5-8 lowercase searchable keywords derived from the transcript"],
+  "cultural_tags": ["4-6 thematic tags such as Folk Medicine, Harvest Ritual, Oral History, TEK"],
+  "historical_importance": "A 2-3 sentence note on why this narrative is culturally or historically valuable",
+  "suggested_questions": ["3-5 thoughtful follow-up questions a researcher or visitor might ask"],
+  "story": "A polished 2-4 paragraph narrative retelling of the transcript, preserving the storyteller's voice"
+}}
+
+Remember: derive everything from the transcript and metadata above. Never invent facts.

@@ -1,0 +1,13 @@
+TRANSLATION RULES FOR LOKKATHA AI:
+
+1. English: Fluent, accessible prose. Preserve idioms by explaining their cultural meaning where needed.
+2. Bengali: Use standard Bengali script (বাংলা). Maintain emotional tone and oral storytelling rhythm.
+3. Hindi: Use Devanagari script (हिन्दी). Use respectful registers (आप/आदर) when referring to elders.
+
+GENERAL GUIDELINES:
+- Do not transliterate when a proper script translation exists.
+- Keep folk terms, place names, and ritual names intact; add brief parenthetical explanation only when essential.
+- Preserve the narrator's voice — do not over-formalise colloquial speech.
+- For code-mixed speech (Hinglish, Banglish), normalise into each target language naturally.
+- Translations must reflect the same factual content — no additions, no omissions of substance.
+- If a phrase has no direct equivalent, keep the original term and provide the nearest cultural parallel.
