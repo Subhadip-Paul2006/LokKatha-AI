@@ -1,12 +1,9 @@
-export interface ChatMessage {
-  role: 'user' | 'assistant' | 'system'
-  content: string
-}
-
 export interface ChatSource {
   title: string
   book: string
   similarity: number
+  pages?: string
+  characters?: string
 }
 
 export interface RelatedStory {
@@ -22,6 +19,19 @@ export interface ChatMetrics {
   totalMs: number
 }
 
+export interface ChatMessage {
+  id: string
+  role: 'user' | 'assistant' | 'system'
+  content: string
+  timestamp: string
+  sources?: ChatSource[]
+  relatedStories?: RelatedStory[]
+  suggestions?: string[]
+  confidence?: number
+  status: 'streaming' | 'complete' | 'error' | 'thinking'
+  metrics?: ChatMetrics
+}
+
 export interface StructuredChatOutput {
   answer: string
   sources: ChatSource[]
@@ -31,4 +41,4 @@ export interface StructuredChatOutput {
   metrics?: ChatMetrics
 }
 
-export type SSEEvent = 'start' | 'token' | 'source' | 'complete' | 'error'
+export type SSEEvent = 'start' | 'thinking' | 'token' | 'sources' | 'suggestions' | 'complete' | 'error'
