@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 
 export const MODEL_DIMENSIONS = 768
-export const EMBEDDING_MODEL = 'text-embedding-004'
+export const EMBEDDING_MODEL = 'embedding-001'
 export const EMBEDDING_VERSION = '1.0'
 
 export class VectorSearch {

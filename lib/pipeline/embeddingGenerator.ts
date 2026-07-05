@@ -2,10 +2,10 @@ import dotenv from 'dotenv'
 dotenv.config({ path: '.env.local' })
 import { GoogleGenAI } from '@google/genai'
 
-// @google/genai v2 defaults to v1beta, but text-embedding-004 only exists
-// on the v1 endpoint. We pass httpOptions.apiVersion = 'v1' to the embedding
-// client so the embedContent call routes correctly.
-const EMBEDDING_MODEL = 'text-embedding-004'
+// 'embedding-001' is the universally available Google embedding model.
+// It works on all Gemini API keys and produces 768-dimensional vectors,
+// matching the Supabase pgvector schema.
+const EMBEDDING_MODEL = 'embedding-001'
 
 export class EmbeddingGenerator {
   private ai: GoogleGenAI
@@ -15,11 +15,7 @@ export class EmbeddingGenerator {
     if (!apiKey) {
       throw new Error('GOOGLE_API_KEY is missing in environment variables.')
     }
-    // Force v1 API for this client — required for text-embedding-004
-    this.ai = new GoogleGenAI({
-      apiKey,
-      httpOptions: { apiVersion: 'v1' },
-    })
+    this.ai = new GoogleGenAI({ apiKey })
   }
 
   private sleep(ms: number) {
@@ -27,7 +23,7 @@ export class EmbeddingGenerator {
   }
 
   /**
-   * Generates a 768-dimensional embedding vector using text-embedding-004.
+   * Generates a 768-dimensional embedding vector using embedding-001.
    * Matches the dimension of vectors stored in Supabase.
    */
   async generate(text: string, retries = 3): Promise<number[]> {
