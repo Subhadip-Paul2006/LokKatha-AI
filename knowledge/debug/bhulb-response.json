@@ -1,0 +1,62 @@
+{
+  "summary_bn": "প্রদত্ত গল্পটি অসংলগ্ন শব্দ এবং বাক্যাংশ নিয়ে গঠিত, যার ফলে একটি সুসংগত সারসংক্ষেপ তৈরি করা সম্ভব নয়। এটিতে 'উপদেশ', 'মানুষে', 'বিছে', 'ভূত-প্রেত' এবং 'প্রেতঠাকুর' এর মতো বিচ্ছিন্ন শব্দ রয়েছে।",
+  "summary_en": "The provided story consists of disjointed words and phrases, making it impossible to create a coherent summary. It contains isolated words like 'advice', 'people', 'scorpion', 'ghosts', and 'spirit lord'.",
+  "summary_hi": "प्रदान की गई कहानी असंबद्ध शब्दों और वाक्यांशों से बनी है, जिससे एक सुसंगत सारांश बनाना असंभव है। इसमें 'उपदेश', 'मनुष्य', 'बिच्छू', 'भूत-प्रेत' और 'प्रेतठाकुर' जैसे अलग-अलग शब्द शामिल हैं।",
+  "confidence": 0.1,
+  "characters": [],
+  "keywords": [
+    "উপদেশ",
+    "মানুষে",
+    "বিছে",
+    "ভূত-প্রেত",
+    "প্রেতঠাকুর",
+    "বাসিন্দা",
+    "চুল",
+    "গাল"
+  ],
+  "category": "Undetermined",
+  "cultural_importance": "Undetermined due to incoherent text.",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very difficult to understand (due to incoherence)",
+  "age_group": "Not applicable (due to incoherence)",
+  "themes": [],
+  "locations": [
+    "মশানের"
+  ],
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "উপদেশ",
+    "মানুষে",
+    "বিছে",
+    "ভূত-প্রেত",
+    "প্রেতঠাকুর",
+    "বাসিন্দা",
+    "চুল",
+    "গাল",
+    "মশান"
+  ],
+  "entities": {
+    "people": [
+      "মানুষে",
+      "বাসিন্দা"
+    ],
+    "places": [
+      "মশানের"
+    ],
+    "animals": [
+      "বিছে"
+    ],
+    "objects": [
+      "চুল",
+      "গাল"
+    ],
+    "mythical_creatures": [
+      "ভূত-প্রেত-প্রেতী-দৈত্য-দানব-রাক্ষস-রাক্ষসীরা",
+      "প্রেতঠাকুর",
+      "ভুতী"
+    ]
+  },
+  "festival_association": null,
+  "moral": null
+}

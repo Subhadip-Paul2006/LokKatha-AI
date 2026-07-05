@@ -1,0 +1,84 @@
+{
+  "id": "ab97c812-414d-496a-b41b-c537e7a9821c",
+  "title": "আত্মহারা",
+  "slug": "aatmahara",
+  "content": "লোকেরা\n\nরাজ্যের\n\nশোনামাত্র\n\nএই\n\nরাজা,\n\nআত্মহারা\n\nআর\n\nনামল\n\nভূমিতে\n\nরথ\n\nমাতার\n\nপিতা-\n\nস.ধাস,ন্দরের\n\nকারণ-তিক\n\nগেলেন,\n\n£থেমে\n\nগেলেন\n\nথেমে\n\nগেলেন,\n\nথেমে\n\nপূর্বে\n\nরাজাবাহাদুর\n\nআর\n\nহল\n\nজয়স,খধাম\n\nপথ\n\nআকাশ-\n\nচাপিয়ে\n\nরথে\n\nআর\n\nকিন্নরেরা\n\nআর\n\nসনন্দরীরা\n\nমজাদার\n\nতো\n\nনামটা\n\n!\n(P\n\nরাজ্যে।\n\nরাণী!\n\nএ\nTa\n\nএ\n\n৷\n\nও\nকরলেন।",
+  "summary_bn": "প্রদত্ত গল্পটি অত্যন্ত খণ্ডিত এবং অসম্পূর্ণ, তাই একটি অর্থপূর্ণ সারসংক্ষেপ তৈরি করা সম্ভব নয়।",
+  "summary_en": "The provided story is extremely fragmented and incomplete, making it impossible to create a meaningful summary.",
+  "summary_hi": "प्रदान की गई कहानी अत्यधिक खंडित और अधूरी है, इसलिए एक सार्थक सारांश बनाना असंभव है।",
+  "confidence": 0.05,
+  "characters": [
+    "রাজা",
+    "রাণী",
+    "স.ধাস,ন্দর",
+    "কিন্নরেরা",
+    "সনন্দরীরা"
+  ],
+  "keywords": [
+    "রাজা",
+    "রাণী",
+    "রথ",
+    "ভূমি",
+    "আকাশ",
+    "কিন্নর",
+    "সনন্দরী",
+    "জয়স,খধাম",
+    "আত্মহারা"
+  ],
+  "category": "Undetermined",
+  "cultural_importance": "Undetermined due to fragmented text",
+  "moral": null,
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very difficult to comprehend due to fragmentation",
+  "age_group": "Undetermined",
+  "themes": [],
+  "locations": [
+    "রাজ্য",
+    "ভূমি",
+    "আকাশ",
+    "জয়স,খধাম"
+  ],
+  "festival_association": null,
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "আত্মহারা",
+    "Bengali folklore",
+    "fragmented story",
+    "রাজা",
+    "রাণী",
+    "কিন্নর",
+    "সনন্দরী",
+    "জয়স,খধাম"
+  ],
+  "entities": {
+    "people": [
+      "রাজা",
+      "রাণী",
+      "স.ধাস,ন্দর"
+    ],
+    "places": [
+      "রাজ্য",
+      "ভূমি",
+      "আকাশ",
+      "জয়স,খধাম"
+    ],
+    "animals": [],
+    "objects": [
+      "রথ"
+    ],
+    "mythical_creatures": [
+      "কিন্নরেরা",
+      "সনন্দরীরা"
+    ]
+  },
+  "citations": {
+    "book": "Tkakurmar Jhuli",
+    "pages": [
+      18
+    ],
+    "language": "bn"
+  },
+  "status": "processed",
+  "checksum": "73eb9d52b9476a6f08569dc6ef375bb533e12f3076670426d8850a7b05f0f141"
+}

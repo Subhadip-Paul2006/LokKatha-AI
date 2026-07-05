@@ -1,0 +1,87 @@
+{
+  "summary_bn": "চার ভাই DASA রাজকন্যাকে এক দানবের হাত থেকে বাঁচিয়ে ফুল-নৌকায় করে সাগর পার হয়ে রাজা টংটংকারুঝংঝংকারের কাছে নিয়ে আসে। এর আগে, এক হাঙ্গর ATT OAT-এর ছেলেকে তার সাহসিকতার জন্য জীবন ফিরিয়ে দেয়, কারণ সে GVA GTM-কে বাঁচানোর জন্য যুদ্ধ করেছিল। ছোট ভাই টংচম.চম. ভাঙা ফুল-নৌকা মেরামত করে। রাজা তার হারানো মেয়েকে ফিরে পেয়ে খুব খুশী হন। চার ভাইয়ের মহত্ব দেখে, যখন তারা রাজকন্যাকে বোন হিসেবে গ্রহণ করে, রাজা তাদের অনেক ধন-সম্পদ উপহার দেন।",
+  "summary_en": "The four DASA brothers rescue a princess from a demon and bring her across the sea in a flower-boat to King Tongtonkarujhongjhongkar. Earlier, a shark returned the life of ATT OAT's son for his bravery in fighting to save GVA GTM. The younger brother, Tongchamcham, rebuilt the broken flower-boat. The king is overjoyed to have his lost daughter back. Impressed by the four brothers' nobility, as they consider the princess their sister, the king rewards them with many jewels and gold.",
+  "summary_hi": "चार DASA भाई एक राजकुमारी को एक दानव से बचाते हैं और उसे फूल-नाव में समुद्र पार करके राजा टोंगटोंकरुझोंगझोंगकर के पास लाते हैं। इससे पहले, एक शार्क ने ATT OAT के बेटे को उसकी बहादुरी के लिए जीवन वापस कर दिया था, क्योंकि उसने GVA GTM को बचाने के लिए लड़ाई लड़ी थी। छोटा भाई, टोंगचमचम, टूटी हुई फूल-नाव को फिर से बनाता है। राजा अपनी खोई हुई बेटी को वापस पाकर बहुत खुश होता है। चार भाइयों की महानता से प्रभावित होकर, जब वे राजकुमारी को अपनी बहन मानते हैं, राजा उन्हें कई गहने और सोना उपहार में देता है।",
+  "confidence": 0.85,
+  "characters": [
+    "ATT OAT",
+    "ভতরানী",
+    "টংচম.চম.",
+    "চারভাই DASA",
+    "রাজকন্যা",
+    "রাজা টংটংকারুঝংঝংকার",
+    "হাঙ্গর",
+    "GVA GTM"
+  ],
+  "keywords": [
+    "Princess",
+    "King",
+    "Brothers",
+    "Shark",
+    "Demon",
+    "Flower-boat",
+    "Rescue",
+    "Nobility",
+    "Reward",
+    "Sea"
+  ],
+  "category": "Folklore",
+  "cultural_importance": "The story highlights values such as bravery, selflessness, and familial bonds (treating the princess as a sister), which are common themes in Bengali folklore.",
+  "reading_time": "2-3 minutes",
+  "difficulty": "Easy",
+  "age_group": "Children (6-10 years)",
+  "themes": [
+    "Bravery",
+    "Selflessness",
+    "Siblinghood (metaphorical)",
+    "Generosity",
+    "Rescue",
+    "Good deeds rewarded"
+  ],
+  "locations": [
+    "সাগর"
+  ],
+  "related_titles": [],
+  "sample_questions": [
+    "রাজকন্যাকে কে বাঁচিয়েছিল?",
+    "হাঙ্গর কেন ছেলেটির জীবন ফিরিয়ে দিল?",
+    "চার ভাই রাজকন্যার সাথে কী সম্পর্ক স্থাপন করেছিল?",
+    "রাজা টংটংকারুঝংঝংকার ভাইদের কী উপহার দিলেন?"
+  ],
+  "search_terms": [
+    "Bengali folklore",
+    "Princess rescue story",
+    "Brothers and princess",
+    "Shark story",
+    "Flower boat",
+    "King's reward",
+    "Selfless brothers"
+  ],
+  "entities": {
+    "people": [
+      "ATT OAT",
+      "টংচম.চম.",
+      "চারভাই DASA",
+      "রাজকন্যা",
+      "রাজা টংটংকারুঝংঝংকার",
+      "GVA GTM"
+    ],
+    "places": [
+      "সাগর"
+    ],
+    "animals": [
+      "হাঙ্গর"
+    ],
+    "objects": [
+      "ফুল-নৌকা",
+      "ধন",
+      "সোনা-দানা"
+    ],
+    "mythical_creatures": [
+      "দানব",
+      "ভতরানী"
+    ]
+  },
+  "festival_association": null,
+  "moral": "Selfless acts and bravery are rewarded. Treating others with respect and kindness, even strangers, brings great honor and fortune."
+}

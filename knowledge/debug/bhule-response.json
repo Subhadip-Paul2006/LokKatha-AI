@@ -1,0 +1,56 @@
+{
+  "summary_bn": "প্রদত্ত পাঠ্যটি অত্যন্ত খণ্ডিত এবং অসংলগ্ন। এটি একটি সুসংহত গল্প নয়, তাই এর একটি অর্থপূর্ণ সারাংশ তৈরি করা সম্ভব নয়।",
+  "summary_en": "The provided text is extremely fragmented and incoherent. It does not form a cohesive story, making it impossible to generate a meaningful summary.",
+  "summary_hi": "प्रदान किया गया पाठ अत्यधिक खंडित और असंगत है। यह एक सुसंगत कहानी नहीं है, इसलिए इसका कोई सार्थक सारांश बनाना असंभव है।",
+  "confidence": 0.05,
+  "characters": [
+    "জাদুকরী",
+    "মায়েরা",
+    "পায়রা"
+  ],
+  "keywords": [
+    "জাদুকরী",
+    "চোখ",
+    "পায়রা",
+    "টাকা",
+    "আগুন",
+    "রান্না"
+  ],
+  "category": "Uncategorized",
+  "cultural_importance": "Undetermined due to fragmented text",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very Difficult to Interpret",
+  "age_group": "Not applicable due to fragmented text",
+  "themes": [],
+  "locations": [],
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "জাদুকরী",
+    "পায়রা",
+    "চোখ",
+    "টাকা",
+    "আগুন",
+    "রান্না",
+    "মায়েরা"
+  ],
+  "entities": {
+    "people": [
+      "মায়েরা"
+    ],
+    "places": [],
+    "animals": [
+      "পায়রা"
+    ],
+    "objects": [
+      "টাকা",
+      "চোখ",
+      "আগুন"
+    ],
+    "mythical_creatures": [
+      "জাদুকরী"
+    ]
+  },
+  "festival_association": null,
+  "moral": null
+}

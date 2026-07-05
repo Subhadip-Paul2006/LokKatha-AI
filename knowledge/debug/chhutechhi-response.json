@@ -1,0 +1,65 @@
+{
+  "summary_bn": "একটি সংক্ষিপ্ত ও খণ্ডিত গল্পে, একজন ব্যক্তি ভয়ে দৌড়াচ্ছিল, সম্ভবত চোর বা ভূতপেতদের থেকে। সে পেছনে তাকাচ্ছিল না। পরে সে আবিষ্কার করে যে তার পিছনের লোকটি আসলে তার পরিচিত একজন। যম এবং বাঘের উল্লেখ আছে।",
+  "summary_en": "In a brief and fragmented story, a person was running in fear, possibly from a thief or ghosts. They weren't looking back. Later, they discovered that the person behind them was actually someone familiar. Yama and a tiger are also mentioned.",
+  "summary_hi": "एक संक्षिप्त और खंडित कहानी में, एक व्यक्ति डर के मारे भाग रहा था, शायद किसी चोर या भूतों से। वह पीछे मुड़कर नहीं देख रहा था। बाद में, उसने पाया कि उसके पीछे वाला व्यक्ति वास्तव में उसका कोई परिचित था। यम और एक बाघ का भी उल्लेख है।",
+  "confidence": 0.6,
+  "characters": [
+    "দৌড়ানো ব্যক্তি",
+    "পরিচিত ব্যক্তি",
+    "চোর",
+    "যম"
+  ],
+  "keywords": [
+    "ভয়",
+    "দৌড়ানো",
+    "চোর",
+    "ভূতপেত",
+    "পরিচিত",
+    "যম",
+    "বাঘ"
+  ],
+  "category": "Folklore",
+  "cultural_importance": "Limited, due to fragmented nature of the text.",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Easy",
+  "age_group": "General Audience",
+  "themes": [
+    "Fear",
+    "Pursuit",
+    "Misidentification"
+  ],
+  "locations": [],
+  "related_titles": [],
+  "sample_questions": [
+    "গল্পের প্রধান চরিত্র কেন দৌড়াচ্ছিল?",
+    "দৌড়ানো ব্যক্তিটি কাকে দেখে অবাক হয়েছিল?",
+    "গল্পে আর কোন কোন সত্তার উল্লেখ আছে?"
+  ],
+  "search_terms": [
+    "ভয়",
+    "দৌড়ানো",
+    "চোর",
+    "ভূতপেত",
+    "পরিচিত লোক",
+    "যম",
+    "বাঘ"
+  ],
+  "entities": {
+    "people": [
+      "যম",
+      "চোর",
+      "দৌড়ানো ব্যক্তি",
+      "পরিচিত ব্যক্তি"
+    ],
+    "places": [],
+    "animals": [
+      "বাঘ"
+    ],
+    "objects": [],
+    "mythical_creatures": [
+      "ভূতপেত"
+    ]
+  },
+  "festival_association": null,
+  "moral": null
+}

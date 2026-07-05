@@ -1,0 +1,87 @@
+{
+  "id": "6a6dc6f4-d173-4e61-90ea-e958ff11bbc2",
+  "title": "ছুটেই",
+  "slug": "chhutei",
+  "content": "ডাইনির\n\nমধু\n\nনিশ্চয়\n\nদিতুম\n\nমধু\n\nকি\n\nপুজোর\n\nগ্রেতঠাকুরের\n\nনিশ্চই\n\nথাকলে\n\nতো\n\nমধু\n\nমেয়ে,\n\nদিদির\n\nসে\n\nউদ্দেশ্য\n\nপ্রেতঠাকুরের\n\nদেবে\n\nমধু\n\nপারি\n\nযোগাড়\n\nমধু\n\nমধু\n\nবে\n\nপুজোয়\n\nগুজো\n\nপ্রেততাকুরের\n\nআজ\n\n*মশানে\n\nমাসি,\n\nমাসি,\n\ngst\n\nহবে।\n\nনি।\n\nআছে?\n\n۳\nBST\n\n৷\n\nfiga\n\nনা?\n\nদিতুম।\n\n۲\n\nএসেছিল।\n\nভৃতীর ঘরে  কিন্তু মধু ছিল কি সে বলল, নেই ৷",
+  "summary_bn": "প্রদত্ত গল্পটি অত্যন্ত খণ্ডিত এবং অসম্পূর্ণ শব্দ ও বাক্য নিয়ে গঠিত। এটি একটি সুসংহত আখ্যান তৈরি করতে বা কোনো নির্দিষ্ট ঘটনা বর্ণনা করতে ব্যর্থ। গল্পে ডাইনি, মধু, পুজো, প্রেতঠাকুর, মশান, মাসি এবং ভৃতীর ঘরের মতো কিছু শব্দ উল্লেখ করা হয়েছে, কিন্তু তাদের মধ্যে কোনো স্পষ্ট সংযোগ বা ধারাবাহিকতা নেই। মধু নামক একটি বস্তুর অনুপস্থিতি বা খোঁজার ইঙ্গিত পাওয়া যায়।",
+  "summary_en": "The provided text is extremely fragmented and consists of incomplete words and phrases, making it impossible to form a coherent narrative or extract a clear plot. It mentions elements such as a witch, honey, puja, a ghost god, a cremation ground, an aunt, and a maid's room. There is a recurring mention of 'Madhu' (honey or a name) and its absence, possibly in the maid's room, but the context remains unclear due to the story's disjointed nature.",
+  "summary_hi": "प्रदान की गई कहानी अत्यधिक खंडित है और अधूरे शब्दों और वाक्यों से बनी है। यह एक सुसंगत कथा बनाने या किसी विशिष्ट घटना का वर्णन करने में विफल रहती है। कहानी में डायन, मधु, पूजा, प्रेतठाकुर, मशान, मौसी और नौकरानी के कमरे जैसे कुछ शब्दों का उल्लेख है, लेकिन उनके बीच कोई स्पष्ट संबंध या निरंतरता नहीं है। मधु नामक किसी वस्तु की अनुपस्थिति या खोज का संकेत मिलता है।",
+  "confidence": 0.1,
+  "characters": [
+    "মধু",
+    "মেয়ে",
+    "দিদি",
+    "মাসি",
+    "ভৃতী",
+    "ডাইনি"
+  ],
+  "keywords": [
+    "ডাইনি",
+    "মধু",
+    "পুজো",
+    "প্রেতঠাকুর",
+    "মশান",
+    "মাসি",
+    "ভৃতী",
+    "অনুপস্থিতি"
+  ],
+  "category": "Fragmented Narrative",
+  "cultural_importance": "Undetermined due to fragmentation",
+  "moral": null,
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very Easy",
+  "age_group": "All ages",
+  "themes": [
+    "Absence",
+    "Search",
+    "Superstition",
+    "Ritual"
+  ],
+  "locations": [
+    "মশান",
+    "ভৃতীর ঘর"
+  ],
+  "festival_association": null,
+  "related_titles": [],
+  "sample_questions": [
+    "গল্পে মধু কোথায় ছিল না?",
+    "প্রেতঠাকুরের পুজোয় কি দরকার ছিল?",
+    "ভৃতীর ঘরে কে এসেছিল?"
+  ],
+  "search_terms": [
+    "ডাইনি মধু",
+    "প্রেতঠাকুর পুজো",
+    "মশান মাসি",
+    "ভৃতীর ঘরে",
+    "মধু নেই"
+  ],
+  "entities": {
+    "people": [
+      "মধু",
+      "মেয়ে",
+      "দিদি",
+      "মাসি",
+      "ভৃতী",
+      "ডাইনি"
+    ],
+    "places": [
+      "মশান",
+      "ভৃতীর ঘর"
+    ],
+    "animals": [],
+    "objects": [
+      "মধু"
+    ],
+    "mythical_creatures": [
+      "ডাইনি",
+      "প্রেতঠাকুর"
+    ]
+  },
+  "citations": {
+    "book": "Tkakurmar Jhuli",
+    "pages": [],
+    "language": "bn"
+  },
+  "status": "processed",
+  "checksum": "65fbfad6546901b75639e5d80eadaff8d0b4ae8d14575a291222da117eaf5db7"
+}

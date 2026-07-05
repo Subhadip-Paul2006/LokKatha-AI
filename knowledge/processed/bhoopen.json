@@ -1,0 +1,97 @@
+{
+  "id": "bcae01b8-f803-4aaa-b426-899915f83cb8",
+  "title": "ভূপেন",
+  "slug": "bhoopen",
+  "content": "পারুল\n\nবোন\n\nএক\n\nরায়চৌধুরী\n\nউপেন্দ্রকিশোর\n\nমেলা\n\nজীবজন্তর\n\nরায়চৌধুরী\n\nউপেন্দ্রকিশোর\n\nবানর\n\nবহুরূপী\n\nরায়\n\nসুকুমার\n\nদাশু\n\nপাগলা\n\nরায়\n\nসুকুমার\n\nতাবোল\n\nআবোল\n\nসরকার\n\nসুনীল\n\nদরবার\n\nভট্টাচাধ্য\n\nনবকুমার\n\nনীল\n\nভট্টাচার্য্য\n\nভূপেন\n\nউপন্যাস\n\nআরব্য\n\nছোটদের\n\nগাঙ্গুলী\n\nউপন্যাস\n\nছোটদের\n\nরায়চৌধুরী\n\nsitas\n\nate,\n\na",
+  "summary_bn": "প্রদত্ত পাঠ্যটি একটি সুসংহত গল্প নয়, বরং এটি বিভিন্ন শব্দ, নাম এবং কিছু সাধারণ পদ নিয়ে গঠিত। এখানে পারুল, ভূপেন, দাশু, উপেন্দ্রকিশোর রায়চৌধুরী, সুকুমার রায়, সুনীল সরকার এবং নবকুমার ভট্টাচার্য্যের মতো নাম উল্লেখ করা হয়েছে। এছাড়াও 'আবোল তাবোল', 'আরব্য উপন্যাস', 'ছোটদের', 'বানর' এবং 'জীবজন্তর' এর মতো শব্দ পাওয়া যায়।",
+  "summary_en": "The provided text is not a coherent story but rather a collection of various words, names, and common terms. It includes names like Parul, Bhupen, Dashu, Upendrakishore Ray Chowdhury, Sukumar Ray, Sunil Sarkar, and Nabakumar Bhattacharya. Literary references such as 'Abol Tabol' and 'Arabian Novels' are also present, alongside words like 'children's', 'monkey', and 'animals'.",
+  "summary_hi": "प्रदान किया गया पाठ एक सुसंगत कहानी नहीं है, बल्कि यह विभिन्न शब्दों, नामों और कुछ सामान्य पदों का संग्रह है। इसमें पारुल, भूपेन, दाशु, उपेंद्रकिशोर रायचौधरी, सुकुमार राय, सुनील सरकार और नवकुमार भट्टाचार्य जैसे नामों का उल्लेख है। इसके अतिरिक्त, 'अबोल ताबोल', 'अरबी उपन्यास', 'बच्चों के लिए', 'बंदर' और 'जानवर' जैसे शब्द भी मौजूद हैं।",
+  "confidence": 0.1,
+  "characters": [
+    "পারুল",
+    "ভূপেন",
+    "দাশু"
+  ],
+  "keywords": [
+    "উপন্যাস",
+    "ছোটদের",
+    "জীবজন্তর",
+    "মেলা",
+    "বানর",
+    "বহুরূপী",
+    "আবোল তাবোল",
+    "আরব্য",
+    "রায়চৌধুরী",
+    "রায়",
+    "সরকার",
+    "ভট্টাচাধ্য"
+  ],
+  "category": "Literary References",
+  "cultural_importance": "References to prominent Bengali literary figures and works.",
+  "moral": null,
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Easy",
+  "age_group": "Children",
+  "themes": [
+    "Bengali Literature",
+    "Children's Literature",
+    "Authors"
+  ],
+  "locations": [
+    "দরবার",
+    "আরব্য"
+  ],
+  "festival_association": null,
+  "related_titles": [
+    "আবোল তাবোল",
+    "আরব্য উপন্যাস"
+  ],
+  "sample_questions": [],
+  "search_terms": [
+    "পারুল",
+    "ভূপেন",
+    "উপেন্দ্রকিশোর রায়চৌধুরী",
+    "সুকুমার রায়",
+    "দাশু",
+    "সুনীল সরকার",
+    "নবকুমার ভট্টাচার্য্য",
+    "আবোল তাবোল",
+    "আরব্য উপন্যাস",
+    "ছোটদের উপন্যাস",
+    "বানর",
+    "জীবজন্তর মেলা",
+    "বহুরূপী"
+  ],
+  "entities": {
+    "people": [
+      "পারুল",
+      "ভূপেন",
+      "দাশু",
+      "উপেন্দ্রকিশোর রায়চৌধুরী",
+      "সুকুমার রায়",
+      "সুনীল সরকার",
+      "নবকুমার ভট্টাচার্য্য"
+    ],
+    "places": [
+      "দরবার",
+      "আরব্য"
+    ],
+    "animals": [
+      "বানর",
+      "জীবজন্তর"
+    ],
+    "objects": [
+      "উপন্যাস",
+      "আবোল তাবোল",
+      "আরব্য উপন্যাস"
+    ],
+    "mythical_creatures": []
+  },
+  "citations": {
+    "book": "Tkakurmar Jhuli",
+    "pages": [],
+    "language": "bn"
+  },
+  "status": "processed",
+  "checksum": "bb6fe2516bbe14f07780b7258ff7714b1b9f9f1a37636b5f9d1de9a4c68c0b66"
+}

@@ -1,0 +1,66 @@
+{
+  "summary_bn": "প্রদত্ত গল্পের বিষয়বস্তু অত্যন্ত খণ্ডিত এবং অসম্পূর্ণ হওয়ায় একটি অর্থপূর্ণ সারসংক্ষেপ তৈরি করা সম্ভব নয়।",
+  "summary_en": "The provided story content is extremely fragmented and incomplete, making it impossible to generate a meaningful summary.",
+  "summary_hi": "प्रदान की गई कहानी की सामग्री अत्यधिक खंडित और अधूरी है, जिससे एक सार्थक सारांश बनाना असंभव है।",
+  "confidence": 0.1,
+  "characters": [
+    "দিদিমা",
+    "খুকি",
+    "চকডকি",
+    "মহারাজ",
+    "কুমীর",
+    "গরুজী"
+  ],
+  "keywords": [
+    "দিদিমা",
+    "খুকি",
+    "চকডকি",
+    "মহারাজ",
+    "কুমীর",
+    "গরু",
+    "বন",
+    "পান"
+  ],
+  "category": "",
+  "cultural_importance": "",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very Easy",
+  "age_group": "",
+  "themes": [],
+  "locations": [
+    "বন",
+    "পাকুর-গায়ে"
+  ],
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "চকডকি",
+    "দিদিমা",
+    "খুকি",
+    "মহারাজ",
+    "কুমীর",
+    "গরু",
+    "বাংলা লোককথা"
+  ],
+  "entities": {
+    "people": [
+      "দিদিমা",
+      "খukি",
+      "মহারাজ"
+    ],
+    "places": [
+      "বন",
+      "পাকুর-গায়ে"
+    ],
+    "animals": [
+      "কুমীর",
+      "গরু"
+    ],
+    "objects": [
+      "পান"
+    ],
+    "mythical_creatures": []
+  },
+  "festival_association": null,
+  "moral": null
+}

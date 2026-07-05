@@ -1,0 +1,71 @@
+{
+  "id": "965085ed-3a4d-41d7-9010-9bacb56286a4",
+  "title": "ছোটা",
+  "slug": "chhota",
+  "content": "লোকটার\n\nআমারও\n\nদেখে,\n\nছাগলকে\n\nগরুও\n\nদৌড়াতে\n\nভূতগেত্রীর\n\nভাববার\n\nবের\n\nওর\n\nমারব\n\nওকে\n\nশিং\n\nতাড়া\n\nলোকটাকে\n\nসুতরাং\n\nসিদ্ধ\n\nমানুষেরা\n\nদৌড়াচ্ছে\n\nনিশ্চই\n\nলোকটি\n\ncata\n\n৷\n\nমারে।\n\nstal\n\nএ\n\nFadi\n\n۶\n\n৷\n\n]\n\nদেব!\nএ\n\n۱\n\n৷\n\n২৪ ঠাকুরমার ঝুলি?\nভাবল,_ছাগল কেন  একটা পাগলের মত  হয়ে এ লোকটার পিছনে ছুটছে? নিশ্চয়ই এর\nJOER\n\nএ",
+  "summary_bn": "একটি খণ্ডিত গল্পাংশ যেখানে একজন লোক এবং একটি ছাগল জড়িত। ছাগলটি পাগলের মতো লোকটির পিছনে ছুটছে দেখে একজন ব্যক্তি এর কারণ নিয়ে ভাবছে। গল্পে একটি গরুরও দৌড়ানোর উল্লেখ আছে।",
+  "summary_en": "A fragmented story snippet featuring a man and a goat. An observer wonders why the goat is running after the man like a madman. A cow is also mentioned as running in the narrative.",
+  "summary_hi": "एक खंडित कहानी का अंश जिसमें एक आदमी और एक बकरी शामिल हैं। एक दर्शक सोचता है कि बकरी आदमी के पीछे एक पागल की तरह क्यों दौड़ रही है। कहानी में एक गाय के भी दौड़ने का उल्लेख है।",
+  "confidence": 0.3,
+  "characters": [
+    "লোকটা",
+    "ছাগল",
+    "গরু"
+  ],
+  "keywords": [
+    "লোকটা",
+    "ছাগল",
+    "গরু",
+    "দৌড়ানো",
+    "পাগল",
+    "ভূতগেত্রীর"
+  ],
+  "category": "Folklore Snippet",
+  "cultural_importance": "Undetermined due to fragmented nature",
+  "moral": null,
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very Easy",
+  "age_group": "All Ages",
+  "themes": [
+    "Mystery",
+    "Unusual Behavior"
+  ],
+  "locations": [],
+  "festival_association": null,
+  "related_titles": [],
+  "sample_questions": [
+    "ছাগলটি লোকটির পিছনে কেন ছুটছিল?",
+    "গল্পে আর কোন প্রাণী দৌড়াচ্ছিল?"
+  ],
+  "search_terms": [
+    "Bengali folklore snippet",
+    "goat running story",
+    "man and goat",
+    "ঠাকুরমার ঝুলি অংশ"
+  ],
+  "entities": {
+    "people": [
+      "লোকটা"
+    ],
+    "places": [],
+    "animals": [
+      "ছাগল",
+      "গরু"
+    ],
+    "objects": [
+      "শিং"
+    ],
+    "mythical_creatures": [
+      "ভূত"
+    ]
+  },
+  "citations": {
+    "book": "Tkakurmar Jhuli",
+    "pages": [
+      28
+    ],
+    "language": "bn"
+  },
+  "status": "processed",
+  "checksum": "b4b6987b84157e7a0b91fdcac2806e2d72c78ab60771d076d6ec0e977d90e924"
+}

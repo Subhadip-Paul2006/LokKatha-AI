@@ -1,0 +1,71 @@
+{
+  "summary_bn": "প্রদত্ত গল্পটি অত্যন্ত খণ্ডিত এবং অসম্পূর্ণ, তাই একটি অর্থপূর্ণ সারসংক্ষেপ তৈরি করা সম্ভব নয়।",
+  "summary_en": "The provided story is extremely fragmented and incomplete, making it impossible to create a meaningful summary.",
+  "summary_hi": "प्रदान की गई कहानी अत्यधिक खंडित और अधूरी है, इसलिए एक सार्थक सारांश बनाना असंभव है।",
+  "confidence": 0.05,
+  "characters": [
+    "রাজা",
+    "রাণী",
+    "স.ধাস,ন্দর",
+    "কিন্নরেরা",
+    "সনন্দরীরা"
+  ],
+  "keywords": [
+    "রাজা",
+    "রাণী",
+    "রথ",
+    "ভূমি",
+    "আকাশ",
+    "কিন্নর",
+    "সনন্দরী",
+    "জয়স,খধাম",
+    "আত্মহারা"
+  ],
+  "category": "Undetermined",
+  "cultural_importance": "Undetermined due to fragmented text",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very difficult to comprehend due to fragmentation",
+  "age_group": "Undetermined",
+  "themes": [],
+  "locations": [
+    "রাজ্য",
+    "ভূমি",
+    "আকাশ",
+    "জয়স,খধাম"
+  ],
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "আত্মহারা",
+    "Bengali folklore",
+    "fragmented story",
+    "রাজা",
+    "রাণী",
+    "কিন্নর",
+    "সনন্দরী",
+    "জয়স,খধাম"
+  ],
+  "entities": {
+    "people": [
+      "রাজা",
+      "রাণী",
+      "স.ধাস,ন্দর"
+    ],
+    "places": [
+      "রাজ্য",
+      "ভূমি",
+      "আকাশ",
+      "জয়স,খধাম"
+    ],
+    "animals": [],
+    "objects": [
+      "রথ"
+    ],
+    "mythical_creatures": [
+      "কিন্নরেরা",
+      "সনন্দরীরা"
+    ]
+  },
+  "festival_association": null,
+  "moral": null
+}

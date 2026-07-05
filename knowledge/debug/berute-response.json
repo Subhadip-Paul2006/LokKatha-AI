@@ -1,0 +1,75 @@
+{
+  "summary_bn": "প্রদত্ত পাঠ্যটি অত্যন্ত খণ্ডিত এবং কোনো সুসংহত গল্প উপস্থাপন করে না। এটি বিচ্ছিন্ন শব্দ ও বাক্যাংশের একটি সংগ্রহ, যা থেকে একটি সারসংক্ষেপ তৈরি করা সম্ভব নয়।",
+  "summary_en": "The provided text is extremely fragmented and does not present a coherent story. It is a collection of isolated words and phrases, making it impossible to generate a summary.",
+  "summary_hi": "प्रदान किया गया पाठ अत्यधिक खंडित है और एक सुसंगत कहानी प्रस्तुत नहीं करता है। यह अलग-थलग शब्दों और वाक्यांशों का एक संग्रह है, जिससे सारांश बनाना असंभव है।",
+  "confidence": 0.05,
+  "characters": [
+    "প্রথমজন",
+    "চারভাই"
+  ],
+  "keywords": [
+    "চমচম",
+    "নৌকা",
+    "মহাসাগর",
+    "আগুন",
+    "রক্ত",
+    "বিপদ",
+    "সৎ",
+    "আনন্দ",
+    "খুশী",
+    "বাণ",
+    "আছাড়",
+    "দেহ",
+    "চুরমার"
+  ],
+  "category": "Folklore Fragment",
+  "cultural_importance": "Undetermined due to severe fragmentation; no coherent narrative to assess cultural significance.",
+  "reading_time": "Less than 1 minute (for reading words, not comprehension)",
+  "difficulty": "Extremely difficult to comprehend due to fragmentation",
+  "age_group": "Not applicable due to lack of coherent narrative",
+  "themes": [
+    "Destruction",
+    "Journey",
+    "Danger",
+    "Goodness"
+  ],
+  "locations": [
+    "মহাসাগর",
+    "পরপারে"
+  ],
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "বেরুতে",
+    "চমচম",
+    "নৌকা",
+    "মহাসাগর",
+    "চারভাই",
+    "আগুন",
+    "রক্ত",
+    "বিপদ",
+    "সৎ"
+  ],
+  "entities": {
+    "people": [
+      "প্রথমজন",
+      "চারভাই"
+    ],
+    "places": [
+      "মহাসাগর",
+      "পরপারে"
+    ],
+    "animals": [],
+    "objects": [
+      "চমচম",
+      "নৌকা",
+      "আগুন",
+      "বাণ",
+      "আছাড়",
+      "দেহ"
+    ],
+    "mythical_creatures": []
+  },
+  "festival_association": null,
+  "moral": null
+}

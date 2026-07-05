@@ -1,0 +1,55 @@
+{
+  "summary_bn": "প্রদত্ত পাঠ্যটি অত্যন্ত খণ্ডিত এবং অসংলগ্ন। এটি একটি স্বপ্ন, শিকার এবং মহারাজকে নিয়ে কিছু বিচ্ছিন্ন শব্দ ও বাক্য ধারণ করে, কিন্তু একটি সুসংগত সারসংক্ষেপ তৈরি করা সম্ভব নয়।",
+  "summary_en": "The provided text is extremely fragmented and incoherent. It contains isolated words and phrases related to a dream, hunting, and a 'Maharaj', but it is not possible to construct a coherent summary.",
+  "summary_hi": "प्रदान किया गया पाठ अत्यंत खंडित और असंबद्ध है। इसमें एक सपने, शिकार और 'महाराज' से संबंधित कुछ अलग-थलग शब्द और वाक्यांश शामिल हैं, लेकिन एक सुसंगत सारांश बनाना संभव नहीं है।",
+  "confidence": 0.1,
+  "characters": [
+    "মহারাজ",
+    "লক",
+    "তিক"
+  ],
+  "keywords": [
+    "স্বপ্ন",
+    "শিকার",
+    "অমঙ্গল",
+    "হাতিয়ার",
+    "মহারাজ",
+    "শিঙ্গা"
+  ],
+  "category": "",
+  "cultural_importance": "",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very difficult",
+  "age_group": "",
+  "themes": [
+    "Dreams",
+    "Hunting"
+  ],
+  "locations": [],
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "বিপদকে",
+    "স্বপ্ন",
+    "শিকার",
+    "মহারাজ",
+    "অমঙ্গল",
+    "হাতিয়ার"
+  ],
+  "entities": {
+    "people": [
+      "মহারাজ",
+      "লক",
+      "তিক"
+    ],
+    "places": [],
+    "animals": [],
+    "objects": [
+      "হাতিয়ার",
+      "শিঙ্গা"
+    ],
+    "mythical_creatures": []
+  },
+  "festival_association": null,
+  "moral": null
+}

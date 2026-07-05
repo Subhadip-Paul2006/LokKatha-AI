@@ -1,0 +1,63 @@
+{
+  "summary_bn": "প্রদত্ত গল্পটি অত্যন্ত খণ্ডিত এবং অসম্পূর্ণ। এতে একজন রাজপুত্র, অন্ধকার, চাঁদ, সূর্য, সন্ধ্যা, বন এবং পাখির উল্লেখ আছে। একটি সুন্দরী নারীর কথাও বলা হয়েছে, কিন্তু কোনো সুসংহত কাহিনী বা ঘটনার বর্ণনা নেই।",
+  "summary_en": "The provided story is highly fragmented and incomplete. It mentions a prince, darkness, the moon, the sun, evening, a forest, and birds. A beautiful woman is also mentioned, but there is no coherent plot or description of events.",
+  "summary_hi": "दी गई कहानी अत्यधिक खंडित और अधूरी है। इसमें एक राजकुमार, अंधेरा, चंद्रमा, सूर्य, शाम, एक जंगल और पक्षियों का उल्लेख है। एक सुंदर महिला का भी जिक्र है, लेकिन कोई सुसंगत कथानक या घटनाओं का वर्णन नहीं है।",
+  "confidence": 0.7,
+  "characters": [
+    "রাজপুত্র",
+    "সুন্দরী নারী"
+  ],
+  "keywords": [
+    "রাজপুত্র",
+    "অন্ধকার",
+    "চাঁদ",
+    "সূর্য",
+    "সন্ধ্যা",
+    "বন",
+    "পাখি",
+    "সুন্দরী"
+  ],
+  "category": "Folklore Fragment",
+  "cultural_importance": "Limited, due to fragmented nature of the text.",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very Difficult to comprehend",
+  "age_group": "Not applicable due to fragmentation",
+  "themes": [
+    "অন্ধকার",
+    "প্রকৃতি",
+    "সৌন্দর্য"
+  ],
+  "locations": [
+    "বন"
+  ],
+  "related_titles": [],
+  "sample_questions": [
+    "গল্পে কে কে আছে?",
+    "গল্পটি কিসের উপর?"
+  ],
+  "search_terms": [
+    "রাজপুত্র",
+    "সুন্দরী",
+    "চাঁদ",
+    "সূর্য",
+    "বন",
+    "পাখি",
+    "অন্ধকার"
+  ],
+  "entities": {
+    "people": [
+      "রাজপুত্র",
+      "সুন্দরী নারী"
+    ],
+    "places": [
+      "বন"
+    ],
+    "animals": [
+      "পাখি"
+    ],
+    "objects": [],
+    "mythical_creatures": []
+  },
+  "festival_association": null,
+  "moral": null
+}

@@ -1,0 +1,86 @@
+{
+  "id": "47864e9e-4888-4ee1-9f77-d71b717b6159",
+  "title": "বেরুতে",
+  "slug": "berute",
+  "content": "থেকেই\n\nআপনা\n\nপ্রথমজনের\n\nচমচমের\n\nসময়ে,\n\nআনন্দের\n\nআর\n\nখুশী,\n\nকত\n\nযে\n\nবান\n\nরক্তের\n\nখানখান\n\nদেহটা\n\nঢঙ্চমচম\n\nতৃতীয়\n\nচমচমের\n\nচুরমার\n\nনৌকা\n\nনৌকোটা\n\nচারভাইসহ\n\nপরপারে\n\nমহাসাগরের\n\nপথ\n\nবিপদের\n\nসবরকম\n\nসৎ\n\nযারা\n\nতারই\n\nনৌকা\n\nচমচমের\n\nআগুন,\n\nজ্বলে\n\nদাউ\n\nদাউ\n\nসবই\n\n৷\n\nদিয়ে।\n\n!\n\nআছাড়।\n\nবাণ।\n\n৷\n\n৷\n\nহালি।\n\nএকটি গল্প।",
+  "summary_bn": "প্রদত্ত পাঠ্যটি অত্যন্ত খণ্ডিত এবং কোনো সুসংহত গল্প উপস্থাপন করে না। এটি বিচ্ছিন্ন শব্দ ও বাক্যাংশের একটি সংগ্রহ, যা থেকে একটি সারসংক্ষেপ তৈরি করা সম্ভব নয়।",
+  "summary_en": "The provided text is extremely fragmented and does not present a coherent story. It is a collection of isolated words and phrases, making it impossible to generate a summary.",
+  "summary_hi": "प्रदान किया गया पाठ अत्यधिक खंडित है और एक सुसंगत कहानी प्रस्तुत नहीं करता है। यह अलग-थलग शब्दों और वाक्यांशों का एक संग्रह है, जिससे सारांश बनाना असंभव है।",
+  "confidence": 0.05,
+  "characters": [
+    "প্রথমজন",
+    "চারভাই"
+  ],
+  "keywords": [
+    "চমচম",
+    "নৌকা",
+    "মহাসাগর",
+    "আগুন",
+    "রক্ত",
+    "বিপদ",
+    "সৎ",
+    "আনন্দ",
+    "খুশী",
+    "বাণ",
+    "আছাড়",
+    "দেহ",
+    "চুরমার"
+  ],
+  "category": "Folklore Fragment",
+  "cultural_importance": "Undetermined due to severe fragmentation; no coherent narrative to assess cultural significance.",
+  "moral": null,
+  "reading_time": "Less than 1 minute (for reading words, not comprehension)",
+  "difficulty": "Extremely difficult to comprehend due to fragmentation",
+  "age_group": "Not applicable due to lack of coherent narrative",
+  "themes": [
+    "Destruction",
+    "Journey",
+    "Danger",
+    "Goodness"
+  ],
+  "locations": [
+    "মহাসাগর",
+    "পরপারে"
+  ],
+  "festival_association": null,
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "বেরুতে",
+    "চমচম",
+    "নৌকা",
+    "মহাসাগর",
+    "চারভাই",
+    "আগুন",
+    "রক্ত",
+    "বিপদ",
+    "সৎ"
+  ],
+  "entities": {
+    "people": [
+      "প্রথমজন",
+      "চারভাই"
+    ],
+    "places": [
+      "মহাসাগর",
+      "পরপারে"
+    ],
+    "animals": [],
+    "objects": [
+      "চমচম",
+      "নৌকা",
+      "আগুন",
+      "বাণ",
+      "আছাড়",
+      "দেহ"
+    ],
+    "mythical_creatures": []
+  },
+  "citations": {
+    "book": "Tkakurmar Jhuli",
+    "pages": [],
+    "language": "bn"
+  },
+  "status": "processed",
+  "checksum": "f0e77ea634684fefd62f6ed15409d406f81cffc8699a31d27f3f90acf76bfb64"
+}

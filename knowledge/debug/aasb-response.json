@@ -1,0 +1,65 @@
+{
+  "summary_bn": "কুলগাছ থেকে কুল পাড়ার বিষয়ে আলোচনা হচ্ছে। একজন জিজ্ঞেস করে সব পাকা কুল পাড়তে কত সময় লাগবে। ভূতভেল্কিলাল জানায় যে এতে অনেক সময় লাগবে এবং তাদের মা এখনই গরুকে দেখতে যেতে বলেছেন।",
+  "summary_en": "A discussion takes place about picking ripe jujubes from a tree. One person asks how long it will take to pick all of them. Bhootvelkilal disagrees, stating it will take too much time, and their mother has instructed them to go see the cow immediately.",
+  "summary_hi": "एक बेर के पेड़ से पके बेर तोड़ने के बारे में चर्चा हो रही है। एक व्यक्ति पूछता है कि सभी पके बेर तोड़ने में कितना समय लगेगा। भूतवेलकिलाला असहमत है, कहता है कि इसमें बहुत समय लगेगा, और उनकी माँ ने उन्हें तुरंत गाय देखने जाने का निर्देश दिया है।",
+  "confidence": 0.75,
+  "characters": [
+    "ভূতভেল্কিলাল",
+    "দাদা",
+    "মা"
+  ],
+  "keywords": [
+    "কুল",
+    "কুলগাছ",
+    "পাড়া",
+    "সময়",
+    "মা",
+    "গরু",
+    "ভূতভেল্কিলাল"
+  ],
+  "category": "Children's Story",
+  "cultural_importance": "Not discernible from text",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Easy",
+  "age_group": "Children (4-8 years)",
+  "themes": [
+    "Obedience",
+    "Priorities"
+  ],
+  "locations": [
+    "কুলগাছ"
+  ],
+  "related_titles": [],
+  "sample_questions": [
+    "ভূতভেল্কিলাল কেন সব কুল পাড়তে চাইল না?",
+    "মা তাদের কী করতে বলেছিলেন?",
+    "তারা কী ফল পাড়ার কথা বলছিল?"
+  ],
+  "search_terms": [
+    "কুলগাছ",
+    "কুল পাড়া",
+    "ভূতভেল্কিলাল",
+    "মা",
+    "গরু",
+    "ছোট গল্প"
+  ],
+  "entities": {
+    "people": [
+      "ভূতভেল্কিলাল",
+      "দাদা",
+      "মা"
+    ],
+    "places": [
+      "কুলগাছ"
+    ],
+    "animals": [
+      "গরু"
+    ],
+    "objects": [
+      "কুল"
+    ],
+    "mythical_creatures": []
+  },
+  "festival_association": null,
+  "moral": null
+}

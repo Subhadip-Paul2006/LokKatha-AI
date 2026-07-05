@@ -1,0 +1,12 @@
+{
+  "book": "Tkakurmar Jhuli",
+  "total": 92,
+  "processed": 21,
+  "failed": 71,
+  "skipped": 0,
+  "processing_time": "24m 44s",
+  "tokens_used": 65744,
+  "estimated_cost": "$0.0099",
+  "model": "gemini-2.5-flash",
+  "completed_at": "2026-07-05T05:09:20.009Z"
+}

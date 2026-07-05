@@ -1,0 +1,78 @@
+{
+  "id": "4ef7041c-2e37-4d5a-b347-d40e88c5e260",
+  "title": "দাও",
+  "slug": "dao",
+  "content": "জুড়িয়ে\n\nবুক\n\nআমাংদর\n\nদাও,\n\nদাও,\n\nবলেন,\n\nসর্বদাই\n\nরাণীদের\n\nআর\n\nনা\n\nকল্পটি-_একটিও\n\nরাণী,\n\nযে\n\nআর\n\nR ঠাকুরমার ঝুলি\n\nআদরের\n\nদর\n\nব্যাথা\n\nঅনেকের\n\nদিত\n\nমিষ্টি\n\nচাউনি\n\nতাঁদের\n\nমত\n\nটাদের\n\nহাত,\n\nমত\n\nরূপার\n\nরূপরাণী\n\nআর\n\nসোনারাণী\n\nফুলরাণী,\n\nমৌরাণী,\n\nতা\n\nছিলেন\n\n?--মার\n\nকি\n\nরাণী।\n\n৷\n\nga\n\nও\n\n!\n\n۶\n\nও\n\n!\n;\n\nভগবান!",
+  "summary_bn": "প্রদত্ত পাঠ্যটি অত্যন্ত খণ্ডিত এবং একটি সুসংহত গল্প তৈরি করে না। এতে \"রূপরাণী\", \"সোনারাণী\", \"ফুলরাণী\" এবং \"মৌরাণী\" সহ কয়েকটি শব্দ ও নাম রয়েছে, এবং \"রাণী\" ও \"ঠাকুরমার ঝুলি\"-এর উল্লেখ আছে। কোনো সুস্পষ্ট প্লট বা সম্পূর্ণ আখ্যান বের করা সম্ভব নয়।",
+  "summary_en": "The provided text is highly fragmented and does not form a coherent story. It contains a few words and names, including \"Ruporani,\" \"Sonorani,\" \"Phulorani,\" and \"Mourani,\" along with mentions of \"queens\" and \"Thakurmar Jhuli.\" No discernible plot or complete narrative can be extracted.",
+  "summary_hi": "प्रदान किया गया पाठ अत्यधिक खंडित है और एक सुसंगत कहानी नहीं बनाता है। इसमें \"रूपराणी\", \"सोनानानी\", \"फूलरानी\" और \"मौनानी\" सहित कुछ शब्द और नाम हैं, साथ ही \"रानियों\" और \"ठाकुरमार झूली\" का उल्लेख भी है। कोई स्पष्ट कथानक या पूर्ण कथा निकाली नहीं जा सकती।",
+  "confidence": 0.1,
+  "characters": [
+    "রূপরাণী",
+    "সোনারাণী",
+    "ফুলরাণী",
+    "মৌরাণী"
+  ],
+  "keywords": [
+    "রাণী",
+    "বুক",
+    "ব্যাথা",
+    "মিষ্টি চাউনি",
+    "হাত",
+    "রূপার",
+    "সোনার",
+    "ফুল",
+    "মৌ",
+    "ভগবান",
+    "ঠাকুরমার ঝুলি"
+  ],
+  "category": "Fragmented Story",
+  "cultural_importance": "Not discernible due to fragmented content",
+  "moral": null,
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very Easy (linguistically)",
+  "age_group": "Undetermined",
+  "themes": [],
+  "locations": [],
+  "festival_association": null,
+  "related_titles": [
+    "ঠাকুরমার ঝুলি"
+  ],
+  "sample_questions": [],
+  "search_terms": [
+    "রূপরাণী",
+    "সোনারাণী",
+    "ফুলরাণী",
+    "মৌরাণী",
+    "রাণী",
+    "ঠাকুরমার ঝুলি",
+    "দাও",
+    "বুক",
+    "ব্যাথা",
+    "মিষ্টি চাউনি",
+    "ভগবান"
+  ],
+  "entities": {
+    "people": [
+      "রূপরাণী",
+      "সোনারাণী",
+      "ফুলরাণী",
+      "মৌরাণী"
+    ],
+    "places": [],
+    "animals": [],
+    "objects": [
+      "হাত"
+    ],
+    "mythical_creatures": []
+  },
+  "citations": {
+    "book": "Tkakurmar Jhuli",
+    "pages": [
+      6
+    ],
+    "language": "bn"
+  },
+  "status": "processed",
+  "checksum": "7a63cd776c623e7eefff2acd90637f8e771b939dbaeef23f58972140d4fa0227"
+}

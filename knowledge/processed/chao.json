@@ -1,0 +1,74 @@
+{
+  "id": "8e5dfc92-c326-41fc-a99e-3f8836ef5415",
+  "title": "চাও",
+  "slug": "chao",
+  "content": "নিতে\n\nকি\n\nঘিরে\n\nঅন্ধকার\n\nতো\n\nরাজপুত্র,\n\nউঠল--“ওহে\n\nহাসল\n\nমনোহর\n\nমত\n\nকাতিকের\n\nভাবছি,\n\nআর\n\nমত\n\nটাদের\n\nভাবছ,\n\nরাজপুত্র,\n\nমতোই\n\nচাদের\n\nতো\n\nভাবল_এ\n\nহল\n\nসুন্দরী\n\nজানে,\n\nকে\n\nহল\n\nবনের\n\nআসে,\n\nবাসায়\n\nপাখিরা\n\nযায়,\n\nঅস্ত\n\nসুর্য\n\nহয়,\n\nসন্ধ্যা\n\nভেবে\n\nতা\n\nযাবে,\n\nAT\n\n৷\n\nসামনে।\n\n!\n\n!\n\n1”\n\n৷\n\nআসছে।\n ‎و\n\n2”\n“Si,\nį\"",
+  "summary_bn": "প্রদত্ত গল্পটি অত্যন্ত খণ্ডিত এবং অসম্পূর্ণ। এতে একজন রাজপুত্র, অন্ধকার, চাঁদ, সূর্য, সন্ধ্যা, বন এবং পাখির উল্লেখ আছে। একটি সুন্দরী নারীর কথাও বলা হয়েছে, কিন্তু কোনো সুসংহত কাহিনী বা ঘটনার বর্ণনা নেই।",
+  "summary_en": "The provided story is highly fragmented and incomplete. It mentions a prince, darkness, the moon, the sun, evening, a forest, and birds. A beautiful woman is also mentioned, but there is no coherent plot or description of events.",
+  "summary_hi": "दी गई कहानी अत्यधिक खंडित और अधूरी है। इसमें एक राजकुमार, अंधेरा, चंद्रमा, सूर्य, शाम, एक जंगल और पक्षियों का उल्लेख है। एक सुंदर महिला का भी जिक्र है, लेकिन कोई सुसंगत कथानक या घटनाओं का वर्णन नहीं है।",
+  "confidence": 0.7,
+  "characters": [
+    "রাজপুত্র",
+    "সুন্দরী নারী"
+  ],
+  "keywords": [
+    "রাজপুত্র",
+    "অন্ধকার",
+    "চাঁদ",
+    "সূর্য",
+    "সন্ধ্যা",
+    "বন",
+    "পাখি",
+    "সুন্দরী"
+  ],
+  "category": "Folklore Fragment",
+  "cultural_importance": "Limited, due to fragmented nature of the text.",
+  "moral": null,
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very Difficult to comprehend",
+  "age_group": "Not applicable due to fragmentation",
+  "themes": [
+    "অন্ধকার",
+    "প্রকৃতি",
+    "সৌন্দর্য"
+  ],
+  "locations": [
+    "বন"
+  ],
+  "festival_association": null,
+  "related_titles": [],
+  "sample_questions": [
+    "গল্পে কে কে আছে?",
+    "গল্পটি কিসের উপর?"
+  ],
+  "search_terms": [
+    "রাজপুত্র",
+    "সুন্দরী",
+    "চাঁদ",
+    "সূর্য",
+    "বন",
+    "পাখি",
+    "অন্ধকার"
+  ],
+  "entities": {
+    "people": [
+      "রাজপুত্র",
+      "সুন্দরী নারী"
+    ],
+    "places": [
+      "বন"
+    ],
+    "animals": [
+      "পাখি"
+    ],
+    "objects": [],
+    "mythical_creatures": []
+  },
+  "citations": {
+    "book": "Tkakurmar Jhuli",
+    "pages": [],
+    "language": "bn"
+  },
+  "status": "processed",
+  "checksum": "3e719768b9cc97220e3086ce3abb35c5f7cb88a1cc78495c97073c03c4e51b17"
+}

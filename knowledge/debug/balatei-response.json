@@ -1,0 +1,65 @@
+{
+  "summary_bn": "প্রদত্ত পাঠ্যটি অত্যন্ত খণ্ডিত এবং একটি সুসংহত গল্প তৈরি করে না। এতে 'ভ্যাংওয়ালা তিন', 'ড্যাংওয়ালা তিন', 'ঠ্যাংওয়ালা তিন' এবং একটি 'ফড়িং'-এর উল্লেখ আছে, যারা 'বিদ্যে' শেখার বা শেখানোর বিষয়ে কথা বলছে বলে মনে হয়। 'রংচমচম' এবং 'শৃন্যে' শব্দগুলিও উপস্থিত।",
+  "summary_en": "The provided text is highly fragmented and does not form a coherent story. It mentions 'three Vyangwalas', 'three Dyangwalas', 'three Thangwalas', and a 'grasshopper', who seem to be discussing learning or teaching 'knowledge'. The words 'rangchamcham' and 'shunye' are also present.",
+  "summary_hi": "प्रदान किया गया पाठ अत्यधिक खंडित है और एक सुसंगत कहानी नहीं बनाता है। इसमें 'तीन व्यंगवाला', 'तीन डेंगवाला', 'तीन ठेंगवाला' और एक 'टिड्डा' का उल्लेख है, जो 'विद्या' सीखने या सिखाने के बारे में बात करते हुए प्रतीत होते हैं। 'रंगचमचम' और 'शून्य' शब्द भी मौजूद हैं।",
+  "confidence": 0.05,
+  "characters": [
+    "ভ্যাংওয়ালা তিন",
+    "ড্যাংওয়ালা তিন",
+    "ঠ্যাংওয়ালা তিন",
+    "ফড়িং"
+  ],
+  "keywords": [
+    "বিদ্যে",
+    "রংচমচম",
+    "ফড়িং",
+    "কাজ",
+    "শিখিয়ে",
+    "শিখতে",
+    "চিনি"
+  ],
+  "category": "Folklore",
+  "cultural_importance": "Undetermined due to fragmented nature of the text.",
+  "reading_time": "Less than 1 minute",
+  "difficulty": "Very high (due to fragmentation and lack of narrative coherence)",
+  "age_group": "Not applicable (text is too fragmented for age-specific content)",
+  "themes": [
+    "Learning",
+    "Knowledge",
+    "Skill"
+  ],
+  "locations": [
+    "শৃন্যে"
+  ],
+  "related_titles": [],
+  "sample_questions": [],
+  "search_terms": [
+    "ভ্যাংওয়ালা",
+    "ড্যাংওয়ালা",
+    "ঠ্যাংওয়ালা",
+    "ফড়িং",
+    "বিদ্যে",
+    "রংচমচম",
+    "বাংলা লোককথা খণ্ডিত",
+    "Bengali folklore fragment"
+  ],
+  "entities": {
+    "people": [
+      "ভ্যাংওয়ালা তিন",
+      "ড্যাংওয়ালা তিন",
+      "ঠ্যাংওয়ালা তিন"
+    ],
+    "places": [
+      "শৃন্যে"
+    ],
+    "animals": [
+      "ফড়িং"
+    ],
+    "objects": [
+      "রংচমচম"
+    ],
+    "mythical_creatures": []
+  },
+  "festival_association": null,
+  "moral": null
+}
