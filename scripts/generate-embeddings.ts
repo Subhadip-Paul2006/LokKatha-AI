@@ -5,6 +5,8 @@ import { writeFileSync, mkdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { EmbeddingGenerator } from '../lib/pipeline/embeddingGenerator'
 import { validateEmbedding } from '../lib/pipeline/embeddingValidator'
+import { createSemanticDocument } from '../lib/pipeline/semanticDocument'
+import { EMBEDDING_MODEL, MODEL_DIMENSIONS, EMBEDDING_VERSION } from '../lib/vectorSearch'
 
 const LOGS_DIR = join(process.cwd(), 'knowledge', 'logs')
 const REPORT_PATH = join(process.cwd(), 'knowledge', 'embedding-report.json')
@@ -23,12 +25,14 @@ function log(msg: string) {
 }
 
 interface EmbeddingReport {
-  stories: number
+  total: number
   embedded: number
+  skipped: number
   failed: number
   processing_time: string
+  average_time_per_story: string
+  average_embedding_length: number
   model: string
-  dimensions: number
   completed_at: string
 }
 
@@ -42,66 +46,86 @@ async function run() {
 
   const generator = new EmbeddingGenerator()
 
-  // 1. Fetch stories that need embedding
-  log('Fetching stories pending semantic indexing...')
-  // Using or filter for both conditions
+  // Mod 4: We fetch ALL stories, and use checksum caching logic locally.
+  log('Fetching all stories to check embedding status...')
   const { data: stories, error: fetchError } = await supabase
     .from('stories')
-    .select('id, metadata')
-    .or('embedding_status.neq.completed,embedding.is.null')
+    .select('id, title, summary, transcript, keywords, historical_importance, metadata, embedding_status')
 
-  if (fetchError) {
-    log(`❌ Failed to fetch stories from Supabase: ${fetchError.message}`)
+  if (fetchError || !stories) {
+    log(`❌ Failed to fetch stories from Supabase: ${fetchError?.message}`)
     process.exit(1)
   }
 
-  const totalStories = stories?.length || 0
+  const totalStories = stories.length
   if (totalStories === 0) {
-    log('✅ All stories are already embedded. Exiting.')
+    log('✅ No stories found in database. Exiting.')
     process.exit(0)
   }
 
-  log(`Found ${totalStories} stories requiring embeddings.`)
-
-  // 2. Batch Processing (10 stories per batch)
   const BATCH_SIZE = 10
   let successCount = 0
   let failedCount = 0
+  let skippedCount = 0
+  let embeddingTimes: number[] = []
 
   for (let i = 0; i < totalStories; i += BATCH_SIZE) {
-    const batch = stories!.slice(i, i + BATCH_SIZE)
+    const batch = stories.slice(i, i + BATCH_SIZE)
     log(`\nProcessing batch ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} items)...`)
 
     for (const story of batch) {
-      log(`  ➡️ Processing story ID: ${story.id}`)
-      const searchDoc = story.metadata?.search_document
+      log(`  ➡️ Checking story ID: ${story.id}`)
+      
+      const meta = story.metadata || {}
+      const currentChecksum = meta.checksum
+      const lastEmbeddedChecksum = meta.last_embedded_checksum
 
+      // Cache logic: skip if already successfully embedded and checksum hasn't changed
+      if (story.embedding_status === 'completed' && currentChecksum === lastEmbeddedChecksum && currentChecksum) {
+        log(`    ⏭️ Skipped: Checksum hasn't changed.`)
+        skippedCount++
+        continue
+      }
+
+      // Mod 5: Better search_document structured generation
+      const searchDoc = createSemanticDocument(story)
+      
       if (!searchDoc) {
-        log(`    ❌ Failed: No search_document found in metadata for ${story.id}.`)
+        log(`    ❌ Failed: Empty search document.`)
         failedCount++
         continue
       }
 
       try {
-        log(`    Creating semantic document... Generating embedding...`)
+        log(`    Generating embedding for "${story.title}"...`)
+        const embedStart = Date.now()
         const vector = await generator.generate(searchDoc)
+        embeddingTimes.push(Date.now() - embedStart)
         
-        const isValid = validateEmbedding(vector, 768)
+        const isValid = validateEmbedding(vector, MODEL_DIMENSIONS)
         if (!isValid) {
           throw new Error('Generated vector failed validation (NaNs, wrong dimension, or empty)')
         }
-        log(`    Validated! Size: ${vector.length}`)
+        
+        // Mod 8: Don't log raw vectors
+        log(`    ✅ Embedding generated | Dimensions: ${vector.length} | Status: Success`)
 
-        // Update database
-        log(`    Saving to database...`)
+        // Update database with vector and top-level search_document
+        meta.last_embedded_checksum = currentChecksum
+        meta.pipeline = meta.pipeline || {}
+        meta.pipeline.embedded = true
+
         const { error: updateError } = await supabase
           .from('stories')
           .update({
             embedding: JSON.stringify(vector),
-            embedding_model: 'text-embedding-004',
-            embedding_dimensions: 768,
+            embedding_model: EMBEDDING_MODEL,
+            embedding_version: EMBEDDING_VERSION,
+            embedding_dimensions: MODEL_DIMENSIONS,
             embedding_status: 'completed',
-            embedding_created_at: new Date().toISOString()
+            embedding_created_at: new Date().toISOString(),
+            search_document: searchDoc,
+            metadata: meta
           })
           .eq('id', story.id)
 
@@ -109,13 +133,6 @@ async function run() {
           throw new Error(`Database update failed: ${updateError.message}`)
         }
 
-        // Also update pipeline metadata embedded flag
-        if (story.metadata && story.metadata.pipeline) {
-          story.metadata.pipeline.embedded = true
-          await supabase.from('stories').update({ metadata: story.metadata }).eq('id', story.id)
-        }
-
-        log(`    ✅ Completed story ID: ${story.id}`)
         successCount++
       } catch (err: any) {
         log(`    ❌ Failed story ID ${story.id}: ${err.message}`)
@@ -124,23 +141,29 @@ async function run() {
     }
   }
 
-  // 3. Generate Report
+  // Generate Report
   const elapsedMs = Date.now() - startTime
   const mins = Math.floor(elapsedMs / 60000)
   const secs = Math.floor((elapsedMs % 60000) / 1000)
+  
+  const avgMs = embeddingTimes.length > 0 
+    ? Math.floor(embeddingTimes.reduce((a, b) => a + b, 0) / embeddingTimes.length) 
+    : 0
 
   const report: EmbeddingReport = {
-    stories: totalStories,
+    total: totalStories,
     embedded: successCount,
+    skipped: skippedCount,
     failed: failedCount,
     processing_time: `${mins}m ${secs}s`,
-    model: 'text-embedding-004',
-    dimensions: 768,
+    average_time_per_story: `${(avgMs / 1000).toFixed(2)}s`,
+    average_embedding_length: MODEL_DIMENSIONS,
+    model: EMBEDDING_MODEL,
     completed_at: new Date().toISOString()
   }
 
   writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2))
-  log(`\n🎉 Semantic Indexing Finished! Embedded=${successCount}, Failed=${failedCount}`)
+  log(`\n🎉 Semantic Indexing Finished! Embedded=${successCount}, Skipped=${skippedCount}, Failed=${failedCount}`)
 }
 
 run().catch(e => log(`Fatal Error: ${e.message}`))

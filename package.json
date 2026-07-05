@@ -10,7 +10,8 @@
     "extract-stories": "npx tsx scripts/extract-stories.ts",
     "process-stories": "npx tsx scripts/process-stories.ts",
     "import-knowledge": "npx tsx scripts/import-supabase.ts",
-    "generate-embeddings": "npx tsx scripts/generate-embeddings.ts"
+    "generate-embeddings": "npx tsx scripts/generate-embeddings.ts",
+    "verify-rag": "npx tsx scripts/verify-rag.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
