@@ -8,7 +8,8 @@ import { Database, Languages, Book, Zap } from 'lucide-react'
 export function AskLokKatha() {
   const isJudgeMode = useSyncExternalStore(
     (listener) => chatSession.subscribe(listener),
-    () => chatSession.isJudgeMode()
+    () => chatSession.isJudgeMode(),
+    () => false
   )
 
   return (

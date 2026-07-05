@@ -63,7 +63,7 @@ export async function extractPdfText(filePath: string): Promise<RawExtraction> {
       try {
         // pdfjs TextContent items — each has a `str` and optional `hasEOL` flag
         const content = await (pageData.getTextContent as () => Promise<{
-          items: Array<{ str: string; hasEOL?: boolean }>
+          items: Array<{ str: string; hasEOL?: boolean; transform?: number[] }>
         }>)()
 
         const parts: string[] = []

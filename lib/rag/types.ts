@@ -51,4 +51,5 @@ export interface RAGReport {
   promptTokens: number
   latency: string
   timestamp: string
+  gemmaMs?: number
 }

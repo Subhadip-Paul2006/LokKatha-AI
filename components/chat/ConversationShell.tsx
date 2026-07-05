@@ -12,12 +12,14 @@ import { StoryPreviewDrawer } from './StoryPreviewDrawer'
 export function ConversationShell() {
   const messages = useSyncExternalStore(
     (listener) => chatSession.subscribe(listener),
-    () => chatSession.getMessages()
+    () => chatSession.getMessages(),
+    () => []
   )
   
   const isJudgeMode = useSyncExternalStore(
     (listener) => chatSession.subscribe(listener),
-    () => chatSession.isJudgeMode()
+    () => chatSession.isJudgeMode(),
+    () => false
   )
 
   useEffect(() => {
