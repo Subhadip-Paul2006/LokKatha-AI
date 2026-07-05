@@ -5,6 +5,8 @@ import { StreamingRenderer } from './StreamingRenderer'
 import { SourceCard } from './SourceCard'
 import { SuggestionChips } from './SuggestionChips'
 import { TypingIndicator } from './TypingIndicator'
+import { getStoryImage } from '@/lib/chat/imageMap'
+import Image from 'next/image'
 
 interface MessageProps {
   message: ChatMessage
@@ -41,6 +43,24 @@ export function Message({ message, onSelectSuggestion, onPreviewSource }: Messag
             content={message.content} 
             isStreaming={message.status === 'streaming'} 
           />
+        </div>
+      )}
+
+      {/* 2.5 Curated Image */}
+      {message.status === 'complete' && message.sources && message.sources.length > 0 && getStoryImage(message.sources[0].title) && (
+        <div className="my-6 rounded-2xl overflow-hidden border-2 border-brown-dark/20 bg-[#f8f5ef] p-4 max-w-2xl mx-auto shadow-sm animate-in fade-in duration-700">
+          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-brown-dark/10">
+            <Image 
+              src={getStoryImage(message.sources[0].title)!.src} 
+              alt={getStoryImage(message.sources[0].title)!.caption}
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <div className="mt-3 text-center">
+            <p className="font-accent text-sm text-ink italic">{getStoryImage(message.sources[0].title)!.caption}</p>
+            <p className="text-[10px] text-terracotta-deep uppercase tracking-wider mt-1">{getStoryImage(message.sources[0].title)!.source}</p>
+          </div>
         </div>
       )}
 

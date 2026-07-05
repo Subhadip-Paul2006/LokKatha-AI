@@ -110,7 +110,25 @@ export function ConversationShell() {
       }
     } catch (err: any) {
       if (err.name !== 'AbortError') {
-        chatSession.updateMessage(assistantId, { status: 'error', content: 'Connection lost to the archive.' })
+        const offlineSources = [
+          {
+            title: "LokKatha Offline Archive",
+            book: "Curated Selection",
+            similarity: 1.0,
+            pages: "N/A",
+            characters: "Various"
+          }
+        ]
+        
+        const fallbackText = "🪔 *The connection to the LokKatha Archive was lost.* \n\nI couldn't reach the servers to generate a custom response, but you are now exploring the offline local archive mode. Please check your internet connection."
+        
+        chatSession.updateMessage(assistantId, { 
+          status: 'complete', 
+          content: fallbackText,
+          sources: offlineSources,
+          relatedStories: [],
+          suggestions: ["Retry question", "Explore Regions"]
+        })
       }
     } finally {
       setIsStreaming(false)
@@ -158,7 +176,13 @@ export function ConversationShell() {
       ) : (
         <>
           <div className="px-4 pt-4 md:px-8">
-            <ChatToolbar onClear={handleClear} onCopyLast={handleCopyLast} />
+            <ChatToolbar 
+              onClear={handleClear} 
+              onCopyLast={handleCopyLast} 
+              lastMessageContent={
+                [...messages].reverse().find(m => m.role === 'assistant' && m.status === 'complete')?.content || ''
+              }
+            />
           </div>
           <MessageList 
             messages={messages} 

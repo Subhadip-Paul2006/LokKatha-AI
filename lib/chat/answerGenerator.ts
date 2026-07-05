@@ -29,7 +29,6 @@ export class AnswerGenerator {
         contents: prompt
       })
 
-      // Race the initial stream connection against the timeout
       const stream = await Promise.race([streamPromise, timeoutPromise])
 
       for await (const chunk of stream) {
@@ -39,8 +38,8 @@ export class AnswerGenerator {
       }
     } catch (error: any) {
       console.error('Answer Generation Error:', error)
-      // Mod 7: Better Error Recovery. Instead of throwing, we yield a fallback message.
-      yield "AI response unavailable at the moment. However, I have retrieved the most relevant cultural stories below."
+      const fallbackText = "🪔 *The LokKatha AI storyteller is resting right now, but the archive is always open.* \n\nI couldn't generate a custom response, but I have retrieved the original stories relevant to your question. You can explore them in the sources below!"
+      yield fallbackText
     }
   }
 }
