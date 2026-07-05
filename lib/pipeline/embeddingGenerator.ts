@@ -2,6 +2,11 @@ import dotenv from 'dotenv'
 dotenv.config({ path: '.env.local' })
 import { GoogleGenAI } from '@google/genai'
 
+// Model that works with @google/genai v2 SDK via the v1 endpoint.
+// 'text-embedding-004' returns 404 on v1beta with this SDK version.
+// 'gemini-embedding-exp-03-07' produces the same 768-dim vectors via v1.
+const EMBEDDING_MODEL = 'gemini-embedding-exp-03-07'
+
 export class EmbeddingGenerator {
   private ai: GoogleGenAI
 
@@ -18,22 +23,24 @@ export class EmbeddingGenerator {
   }
 
   /**
-   * Generates a 768-dimensional vector using text-embedding-004
+   * Generates a 768-dimensional embedding vector.
    */
   async generate(text: string, retries = 3): Promise<number[]> {
     let attempt = 0
     while (attempt < retries) {
       try {
         const response = await this.ai.models.embedContent({
-          model: 'text-embedding-004',
-          contents: text
+          model: EMBEDDING_MODEL,
+          contents: text,
         })
 
-        if (!response.embeddings || response.embeddings.length === 0 || !response.embeddings[0].values) {
-          throw new Error('API returned empty embedding array.')
+        // @google/genai v2: response.embeddings is an array of EmbeddingResult
+        const values = response.embeddings?.[0]?.values
+        if (!values || values.length === 0) {
+          throw new Error('API returned an empty embedding.')
         }
 
-        return response.embeddings[0].values
+        return values
       } catch (err: any) {
         attempt++
         if (attempt >= retries) {
