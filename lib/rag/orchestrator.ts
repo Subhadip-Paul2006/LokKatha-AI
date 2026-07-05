@@ -55,7 +55,7 @@ export class RAGOrchestrator {
       timestamp: new Date().toISOString()
     }
 
-    return { prompt, metrics, validationReport, contextBlocks }
+    return { prompt, metrics, validationReport, contextBlocks, retrieved }
   }
 
   /**
