@@ -5,9 +5,19 @@ type Listener = () => void
 class ChatSessionManager {
   private messages: ChatMessage[] = []
   private listeners: Set<Listener> = new Set()
+  private judgeMode: boolean = false
 
   public getMessages() {
     return this.messages
+  }
+  
+  public isJudgeMode() {
+    return this.judgeMode
+  }
+  
+  public toggleJudgeMode() {
+    this.judgeMode = !this.judgeMode
+    this.notify()
   }
 
   public subscribe(listener: Listener) {
