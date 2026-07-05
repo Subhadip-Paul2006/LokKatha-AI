@@ -122,3 +122,17 @@ class AIPipelineError(AIServiceError):
 
     def __init__(self, message: str = "AI pipeline processing failed.", *, detail: str | None = None) -> None:
         super().__init__(message, detail=detail)
+
+
+# ── PDF Errors ────────────────────────────────────────────────────────────────
+
+
+class PdfExtractionError(LokKathaError):
+    """Raised when text extraction from a PDF fails.
+
+    Covers both PyMuPDF native extraction failures and Tesseract OCR failures.
+    """
+
+    def __init__(self, message: str = "PDF text extraction failed.", *, detail: str | None = None) -> None:
+        super().__init__(message, detail=detail)
+

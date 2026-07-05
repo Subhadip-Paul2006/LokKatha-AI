@@ -15,13 +15,15 @@ logger = logging.getLogger(__name__)
 
 
 class StorageRepository:
-    """Handles interactions with Supabase Storage for files (audio, images)."""
+    """Handles interactions with Supabase Storage for files (audio, images, PDFs)."""
 
     ALLOWED_AUDIO_EXTENSIONS = {".wav", ".mp3", ".m4a", ".ogg"}
     ALLOWED_IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+    ALLOWED_PDF_EXTENSIONS = {".pdf"}
 
     MAX_AUDIO_SIZE_MB = 50.0
     MAX_IMAGE_SIZE_MB = 10.0
+    MAX_PDF_SIZE_MB = 100.0
 
     def __init__(self, client: Client, bucket_name: str = "lokkatha-assets") -> None:
         """Initialize the repository with a Supabase client and target bucket."""
@@ -83,6 +85,36 @@ class StorageRepository:
         self.validate_image(filename, size)
 
         return await self._upload_file(file, filename, "images")
+
+    def validate_pdf(self, filename: str, file_size_bytes: int) -> None:
+        """Validate a PDF file by extension and size.
+
+        Raises:
+            UnsupportedFileTypeError: If the extension is not ``.pdf``.
+            FileTooLargeError: If the size exceeds MAX_PDF_SIZE_MB (100 MB).
+        """
+        ext = self._get_extension(filename)
+        if ext not in self.ALLOWED_PDF_EXTENSIONS:
+            raise UnsupportedFileTypeError(filename, list(self.ALLOWED_PDF_EXTENSIONS))
+
+        size_mb = file_size_bytes / (1024 * 1024)
+        if size_mb > self.MAX_PDF_SIZE_MB:
+            raise FileTooLargeError(max_mb=int(self.MAX_PDF_SIZE_MB), actual_mb=size_mb)
+
+    async def upload_pdf(self, file: IO[bytes] | BinaryIO, filename: str) -> str:
+        """Upload a PDF file and return its public URL.
+
+        Files are stored in the ``books/`` folder of the bucket.
+
+        Raises:
+            StorageError: If upload fails.
+        """
+        file.seek(0, 2)
+        size = file.tell()
+        file.seek(0)
+        self.validate_pdf(filename, size)
+
+        return await self._upload_file(file, filename, "books")
 
     async def delete_file(self, file_url: str) -> None:
         """Delete a file from storage given its public URL.

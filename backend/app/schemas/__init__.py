@@ -12,12 +12,15 @@ from app.schemas.ai import (
     StoryTranslations,
     TranscriptionResult,
 )
+from app.schemas.pdf import PdfExtractionResult, PdfUploadResponse
 
 __all__ = [
     "ArchiveChatInput",
     "ArchiveChatOutput",
     "AudioProcessingInput",
     "LocationInfo",
+    "PdfExtractionResult",
+    "PdfUploadResponse",
     "PipelineResult",
     "ProcessedStoryOutput",
     "SpeakerInfo",
@@ -25,3 +28,4 @@ __all__ = [
     "StoryTranslations",
     "TranscriptionResult",
 ]
+
