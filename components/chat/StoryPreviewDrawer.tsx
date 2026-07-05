@@ -60,20 +60,34 @@ export function StoryPreviewDrawer({ source, onClose }: StoryPreviewDrawerProps)
               </div>
             )}
 
-            {source.characters && (
-              <div>
+            <div className="mt-8 border-l-2 border-terracotta/30 ml-3 pl-6 space-y-8 relative">
+              {/* Timeline Nodes */}
+              
+              <div className="relative">
+                <div className="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-terracotta ring-4 ring-paper-old" />
                 <h4 className="flex items-center gap-2 font-accent text-sm text-brown-dark uppercase tracking-wider mb-1">
                   <Users size={16} /> Characters
                 </h4>
-                <p className="text-ink leading-relaxed">{source.characters}</p>
+                <p className="text-ink leading-relaxed text-sm">
+                  {source.characters || "Main characters of the folklore"}
+                </p>
               </div>
-            )}
-            
-            <div>
-              <h4 className="font-accent text-sm text-brown-dark uppercase tracking-wider mb-2">Original Story Summary</h4>
-              <p className="text-ink leading-relaxed italic border-l-2 border-terracotta/40 pl-4 bg-terracotta/5 p-3 rounded-r-lg">
-                This is a preview of the semantic context that was retrieved from the database to generate the AI response.
-              </p>
+
+              <div className="relative">
+                <div className="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-clay-orange ring-4 ring-paper-old" />
+                <h4 className="font-accent text-sm text-brown-dark uppercase tracking-wider mb-2">Events</h4>
+                <p className="text-ink leading-relaxed text-sm italic border-l-2 border-terracotta/40 pl-4 bg-terracotta/5 p-3 rounded-r-lg">
+                  This is a preview of the semantic context that was retrieved from the database to generate the AI response.
+                </p>
+              </div>
+              
+              <div className="relative">
+                <div className="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-brown-dark/50 ring-4 ring-paper-old" />
+                <h4 className="font-accent text-sm text-brown-dark uppercase tracking-wider mb-1">Moral</h4>
+                <p className="text-ink leading-relaxed text-sm">
+                  Implicit teachings passed down through oral tradition.
+                </p>
+              </div>
             </div>
           </div>
           

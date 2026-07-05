@@ -4,6 +4,11 @@ export interface ChatSource {
   similarity: number
   pages?: string
   characters?: string
+  region?: string
+  category?: string
+  language?: string
+  era?: string
+  tradition?: string
 }
 
 export interface RelatedStory {

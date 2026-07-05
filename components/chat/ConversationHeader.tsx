@@ -31,19 +31,23 @@ export function ConversationHeader({ onSelectExample }: ConversationHeaderProps)
 
       <div className="flex w-full items-center justify-center opacity-40 mt-8 mb-8">
         <div className="h-px w-32 bg-brown-dark/50" />
-        <span className="mx-4 text-sm text-brown-dark uppercase tracking-widest font-medium">Try Asking</span>
+        <span className="mx-4 text-sm text-brown-dark uppercase tracking-widest font-medium">Demo Script Mode</span>
         <div className="h-px w-32 bg-brown-dark/50" />
       </div>
 
-      <div className="flex flex-wrap justify-center gap-3 max-w-2xl">
-        {EXAMPLES.map(ex => (
-          <button
-            key={ex}
-            onClick={() => onSelectExample(ex)}
-            className="rounded-full border border-brown-dark/20 bg-paper-old/50 px-5 py-2 text-sm text-terracotta-deep shadow-sm transition-all hover:border-terracotta/40 hover:bg-terracotta/5 hover:shadow-paper"
-          >
-            {ex}
-          </button>
+      <div className="flex flex-wrap justify-center gap-3 max-w-3xl">
+        {EXAMPLES.map((ex, index) => (
+          <div key={ex} className="flex items-center">
+            <button
+              onClick={() => onSelectExample(ex)}
+              className="rounded-full border border-brown-dark/30 bg-paper-old/80 px-5 py-2 text-sm font-medium text-terracotta-deep shadow-sm transition-all hover:border-terracotta/60 hover:bg-terracotta/10 hover:shadow-paper"
+            >
+              Step {index + 1}: {ex}
+            </button>
+            {index < EXAMPLES.length - 1 && (
+              <span className="text-brown-dark/30 mx-2">→</span>
+            )}
+          </div>
         ))}
       </div>
     </div>

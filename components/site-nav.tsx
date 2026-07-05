@@ -11,9 +11,11 @@ export function SiteNav() {
   const [open, setOpen] = useState(false)
 
   const links = [
-    { label: t.nav.about, href: '#mission' },
-    { label: t.nav.archive, href: '#stories' },
-    { label: t.nav.ask, href: '#ask' },
+    { label: 'Explore Stories', href: '#stories' },
+    { label: 'Ask LokKatha', href: '#ask' },
+    { label: 'Listen', href: '#listen' },
+    { label: 'Explore Regions', href: '#regions' },
+    { label: 'Festivals', href: '#festivals' },
   ]
 
   useEffect(() => {
